@@ -10,6 +10,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 public final class Onigokko extends JavaPlugin {
 
@@ -29,6 +30,8 @@ public final class Onigokko extends JavaPlugin {
     //チーム
     private Team nigeTeam;
     private Team oniTeam;
+    //タイマー
+    Timer gameTimer;
 
 
     @Override
