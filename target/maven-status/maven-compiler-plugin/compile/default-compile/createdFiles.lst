@@ -1,0 +1,6 @@
+com\meao0525\onigokko\map\Map.class
+com\meao0525\onigokko\utils\Mode.class
+com\meao0525\onigokko\Onigokko.class
+com\meao0525\onigokko\utils\OnigoLocation.class
+com\meao0525\onigokko\utils\CommandTabCompleter.class
+com\meao0525\onigokko\utils\GameCommand.class

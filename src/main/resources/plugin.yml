@@ -1,0 +1,11 @@
+name: Onigokko
+version: ${project.version}
+main: com.meao0525.onigokko.Onigokko
+api-version: 1.14
+
+commands:
+  onigo:
+    description:
+      ONIGOKKO game command
+    usage:
+      /<command> help

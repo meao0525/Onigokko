@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f5g9JPI7E0Yky9VLuPbt1e8JVT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gant" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Onigokko build" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="" />
+      <created>1595513214444</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595513214444</updated>
+      <workItem from="1595513216402" duration="524000" />
+      <workItem from="1595765852183" duration="738000" />
+      <workItem from="1595771921964" duration="3803000" />
+      <workItem from="1599139203049" duration="19000" />
+      <workItem from="1599657363816" duration="7925000" />
+      <workItem from="1599741865798" duration="13636000" />
+      <workItem from="1599915145621" duration="1691000" />
+      <workItem from="1601644526334" duration="12738000" />
+      <workItem from="1601719098164" duration="2242000" />
+      <workItem from="1601803668519" duration="1476000" />
+      <workItem from="1601906455153" duration="2093000" />
+      <workItem from="1601987440506" duration="9100000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="610" y="99" key="#Onigokko_build" timestamp="1601647383436">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="610" y="99" key="#Onigokko_build/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601647383436" />
+    <state x="552" y="178" key="#Project_Structure" timestamp="1599660978721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1599660978721" />
+    <state x="414" y="174" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601647122175">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601647122175" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1601996514618">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601996514618" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1601989962679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1601989962679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1601989962679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1601989962679">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
+    <state x="468" y="162" key="SettingsEditor" timestamp="1601647316872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="468" y="162" key="SettingsEditor/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601647316872" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601907407117">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601907407117" />
+  </component>
+</project>
