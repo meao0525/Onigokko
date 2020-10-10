@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Onigokko:jar">
+    <output-path>C:/spigot-1.14.4/plugins</output-path>
+    <root id="archive" name="Onigokko.jar">
+      <element id="module-output" name="Onigokko" />
+    </root>
+  </artifact>
+</component>
