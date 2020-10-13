@@ -20,7 +20,7 @@ public class CommandTabCompleter implements TabCompleter {
         if (command.getName().equalsIgnoreCase("onigo")) {
             if (args.length == 1) { //第1引数
                 if (args[0].length() == 0) {
-                    return Arrays.asList("help", "info", "set", "mode", "oni", "start", "stop");
+                    return Arrays.asList("help", "info", "set", "mode", "oni", "reset", "start", "stop");
                 }
             } else if (args.length == 2) { //第2引数
                 if (args[1].length() == 0) {

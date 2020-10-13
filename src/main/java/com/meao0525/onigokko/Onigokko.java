@@ -2,6 +2,7 @@ package com.meao0525.onigokko;
 
 import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
+import com.meao0525.onigokko.event.OniTouchEvent;
 import com.meao0525.onigokko.game.Mode;
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
@@ -11,6 +12,7 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
@@ -58,7 +60,7 @@ public final class Onigokko extends JavaPlugin {
         //チーム設定
         nigeTeam = board.registerNewTeam("逃げチーム");
         nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OWN_TEAM);
-        nigeTeam.setAllowFriendlyFire(false);
+        nigeTeam.setAllowFriendlyFire(true);
         nigeTeam.setColor(ChatColor.BLUE);
         oniTeam = board.registerNewTeam("鬼チーム");
         oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OWN_TEAM);
@@ -75,6 +77,12 @@ public final class Onigokko extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("Onigokko disabled");
+    }
+
+    public void reset() {
+        //ボーダーをリセット
+        border.reset();
+        Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ボーダーをリセットしました");
     }
 
     public void start() {
@@ -101,6 +109,8 @@ public final class Onigokko extends JavaPlugin {
             prison = oniStartloc;
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "監獄座標を鬼の初期地点に設定しました");
         }
+        //イベント登録
+        registerEvent();
         //タイマースタート
         timer = new GameTimer(time);
         timer.runTaskTimer(this, 0, 20);
@@ -110,8 +120,6 @@ public final class Onigokko extends JavaPlugin {
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ゲームが終了しました");
         //タイマー終了
         timer.cancel();
-        //ボーダーリセット
-        border.reset();
         for (Player p : Bukkit.getOnlinePlayers()) {
             //リスポーンを元に戻す
             p.setBedSpawnLocation(getCenter(), true);
@@ -124,6 +132,10 @@ public final class Onigokko extends JavaPlugin {
                 nigeTeam.removeEntry(p.getName());
             }
         }
+    }
+
+    public void registerEvent() {
+        getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
     }
 
     public boolean isGaming() {

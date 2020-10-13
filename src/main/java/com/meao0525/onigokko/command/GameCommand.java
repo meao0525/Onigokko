@@ -77,6 +77,9 @@ public class GameCommand implements CommandExecutor {
             case "oni":
                 return commandOni(sender, args);
 
+            case "reset":
+
+
             case "start":
                 //設定漏れはないか
                 if (plugin.getNigeStartloc() == null) {
