@@ -3,6 +3,7 @@ package com.meao0525.onigokko;
 import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
 import com.meao0525.onigokko.event.DefaultGameEvent;
+import com.meao0525.onigokko.event.NigeTouchEvent;
 import com.meao0525.onigokko.event.OniTouchEvent;
 import com.meao0525.onigokko.game.Mode;
 import com.meao0525.onigokko.game.OnigoItem;
@@ -62,14 +63,20 @@ public final class Onigokko extends JavaPlugin {
         manager = Bukkit.getScoreboardManager();
         board = manager.getMainScoreboard();
         //チーム設定
-        nigeTeam = board.registerNewTeam("逃げチーム");
-        nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
-        nigeTeam.setAllowFriendlyFire(true);
-        nigeTeam.setColor(ChatColor.BLUE);
-        oniTeam = board.registerNewTeam("鬼チーム");
-        oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
-        oniTeam.setAllowFriendlyFire(false);
-        oniTeam.setColor(ChatColor.RED);
+        nigeTeam = board.getTeam("nigeteam");
+        oniTeam = board.getTeam("oniteam");
+        if (nigeTeam == null) {
+            nigeTeam = board.registerNewTeam("nigeteam");
+            nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            nigeTeam.setAllowFriendlyFire(true);
+            nigeTeam.setColor(ChatColor.BLUE);
+        }
+        if (oniTeam == null) {
+            oniTeam = board.registerNewTeam("oniteam");
+            oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            oniTeam.setAllowFriendlyFire(false);
+            oniTeam.setColor(ChatColor.RED);
+        }
 
         //ボーダー取得
         border = getServer().getWorlds().get(0).getWorldBorder();
@@ -173,6 +180,7 @@ public final class Onigokko extends JavaPlugin {
     public void registerEvent() {
         getServer().getPluginManager().registerEvents(new DefaultGameEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
+        getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
     }
 
 

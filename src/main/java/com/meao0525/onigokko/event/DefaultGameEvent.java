@@ -22,7 +22,9 @@ public class DefaultGameEvent implements Listener {
         }
         Player player = e.getPlayer();
         if ((player.isGlowing()) && (player.getWalkSpeed() == 0.0)) {
-            e.setCancelled(true);
+            if (e.getFrom().getBlock().getLocation().equals(e.getTo().getBlock().getLocation())) {
+                e.setCancelled(true);
+            }
         }
     }
 
