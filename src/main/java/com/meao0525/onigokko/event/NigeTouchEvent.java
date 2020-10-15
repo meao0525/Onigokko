@@ -44,7 +44,7 @@ public class NigeTouchEvent implements Listener {
                 target.setWalkSpeed(0.2F);
                 target.setGlowing(false);
                 //エフェクト
-                target.sendTitle("", ChatColor.AQUA + "解放！", 0, 3, 1);
+                target.sendTitle("", ChatColor.AQUA + "解放！", 0, 40, 20);
                 target.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3F, 0.2F);
             }
 

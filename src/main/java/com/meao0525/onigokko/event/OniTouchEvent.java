@@ -78,7 +78,7 @@ public class OniTouchEvent implements Listener {
                     break;
             }
             //エフェクト
-            target.sendTitle("", ChatColor.RED + "確保された...", 0, 3, 1);
+            target.sendTitle("", ChatColor.RED + "確保された...", 0, 40, 20);
             target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
         }
     }
