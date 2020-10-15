@@ -35,7 +35,7 @@ public class NigeTouchEvent implements Listener {
         Player target = (Player)e.getEntity();
         if (!(plugin.getOni().contains(damager)) && !(plugin.getOni().contains(target))) {
             //捕まってる人
-            if (target.getWalkSpeed() < 0.2F) {
+            if ((target.isGlowing()) && (target.getWalkSpeed() == 0.0)) {
                 Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
                         + ChatColor.RESET + damager.getDisplayName() + " が "
                         + ChatColor.RESET + target.getDisplayName() + " を　開放しました");
@@ -47,6 +47,7 @@ public class NigeTouchEvent implements Listener {
                 target.sendTitle("", ChatColor.AQUA + "解放！", 0, 3, 1);
                 target.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3F, 0.2F);
             }
+
         } else if (!(plugin.getOni().contains(damager)) && plugin.getOni().contains(target)) {
             //殴った方が逃げ、殴られた方が鬼
             e.setCancelled(true);

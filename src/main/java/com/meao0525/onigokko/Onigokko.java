@@ -2,6 +2,7 @@ package com.meao0525.onigokko;
 
 import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
+import com.meao0525.onigokko.event.DefaultGameEvent;
 import com.meao0525.onigokko.event.OniTouchEvent;
 import com.meao0525.onigokko.game.Mode;
 import com.meao0525.onigokko.game.OnigoItem;
@@ -170,6 +171,7 @@ public final class Onigokko extends JavaPlugin {
     }
 
     public void registerEvent() {
+        getServer().getPluginManager().registerEvents(new DefaultGameEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
     }
 
