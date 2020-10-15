@@ -78,7 +78,8 @@ public class GameCommand implements CommandExecutor {
                 return commandOni(sender, args);
 
             case "reset":
-
+                plugin.reset();
+                break;
 
             case "start":
                 //設定漏れはないか

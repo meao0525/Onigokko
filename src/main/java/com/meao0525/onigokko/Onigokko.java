@@ -114,6 +114,8 @@ public final class Onigokko extends JavaPlugin {
     }
 
     public void end() {
+        //ゲーム終了
+        Gaming = false;
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ゲームが終了しました");
         //タイマー終了
         timer.cancel();
@@ -125,6 +127,11 @@ public final class Onigokko extends JavaPlugin {
             //チーム解散
             if (oni.contains(p)) {
                 oniTeam.removeEntry(p.getName());
+                //装備消す
+                p.getInventory().setHelmet(new ItemStack(Material.AIR));
+                p.getInventory().setChestplate(new ItemStack(Material.AIR));
+                p.getInventory().setLeggings(new ItemStack(Material.AIR));
+                p.getInventory().setBoots(new ItemStack(Material.AIR));
             } else {
                 nigeTeam.removeEntry(p.getName());
             }

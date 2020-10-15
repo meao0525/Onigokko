@@ -1,6 +1,6 @@
+com\meao0525\onigokko\event\NigeTouchEvent.class
 com\meao0525\onigokko\map\Map.class
-com\meao0525\onigokko\utils\Mode.class
 com\meao0525\onigokko\Onigokko.class
-com\meao0525\onigokko\utils\OnigoLocation.class
-com\meao0525\onigokko\utils\CommandTabCompleter.class
-com\meao0525\onigokko\utils\GameCommand.class
+com\meao0525\onigokko\event\OniTouchEvent.class
+com\meao0525\onigokko\event\OniTouchEvent$1.class
+com\meao0525\onigokko\game\OnigoItem.class
