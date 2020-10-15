@@ -4,6 +4,7 @@ import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.Mode;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -77,9 +78,22 @@ public class OniTouchEvent implements Listener {
                     target.setGlowing(true);
                     break;
             }
+            if (checkEnd()) {
+                Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.AQUA + "鬼チーム" + ChatColor.RESET + "の勝利！");
+                plugin.end();
+            }
             //エフェクト
             target.sendTitle("", ChatColor.RED + "確保された...", 0, 40, 20);
-            target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
+            target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.1F);
         }
+    }
+
+    public boolean checkEnd() {
+        for(Player p : Bukkit.getOnlinePlayers()) {
+            if (!plugin.getOni().contains(p)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -148,6 +148,9 @@ public final class Onigokko extends JavaPlugin {
             } else {
                 nigeTeam.removeEntry(p.getName());
             }
+            //エフェクト
+            p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
+            p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.3F, 0.5F);
         }
     }
 
@@ -276,6 +279,11 @@ public final class Onigokko extends JavaPlugin {
             if (time > 0) {
                 timerBar.setTitle("残り時間:" + time + "s");
                 timerBar.setProgress(time/maxTime);
+                if (time < 6) {
+                    for (Player p : Bukkit.getOnlinePlayers()) {
+                        p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
+                    }
+                }
             } else {
                 //ボスバー消す
                 timerBar.removeAll();
