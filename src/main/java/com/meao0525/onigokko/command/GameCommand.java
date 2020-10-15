@@ -19,17 +19,18 @@ public class GameCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (plugin.isGaming()) {
-            //ゲーム中
-            sender.sendMessage(ChatColor.GRAY + "このコマンドはゲーム中に使用できません");
-            return true;
-        }
+
         String sub;
         //引数がない場合はhelpを実行させる
         if (args.length == 0) {
             sub = "help";
         } else {
             sub = args[0];
+        }
+        if (plugin.isGaming() && !(sub.equalsIgnoreCase("stop"))) {
+            //ゲーム中
+            sender.sendMessage(ChatColor.GRAY + "このコマンドはゲーム中に使用できません");
+            return true;
         }
         switch (sub) {
             case "help":
@@ -101,9 +102,13 @@ public class GameCommand implements CommandExecutor {
                 break;
 
             case "stop":
-                //強制終了処理
-                plugin.getServer().broadcastMessage(ChatColor.RED + "ゲームを強制終了しました");
-                plugin.end();
+                if (plugin.isGaming()) {
+                    //強制終了処理
+                    plugin.getServer().broadcastMessage(ChatColor.RED + "ゲームを強制終了しました");
+                    plugin.end();
+                } else {
+                    sender.sendMessage(ChatColor.GRAY + "終了するゲームがありません");
+                }
                 break;
         }
         return true;
