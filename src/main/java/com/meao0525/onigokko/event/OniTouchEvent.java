@@ -2,6 +2,9 @@ package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.Mode;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,6 +42,12 @@ public class OniTouchEvent implements Listener {
             }
             //ダメージをほぼ失くす（エフェクトは欲しい）
             e.setDamage(0.1);
+            Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
+                    + ChatColor.RESET + damager.getDisplayName() + " が "
+                    + ChatColor.RESET + target.getDisplayName() + " を捕まえました");
+            //エフェクト
+            target.sendTitle("", ChatColor.RED + "確保された...", 0, 1, 1);
+            target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
             switch (plugin.getMode()) {
                 case ONIGOKKO:
                     //鬼入れ替え
