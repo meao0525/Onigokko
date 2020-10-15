@@ -47,6 +47,8 @@ public class NigeTouchEvent implements Listener {
                 target.sendTitle("", ChatColor.AQUA + "解放！", 0, 1, 1);
                 target.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3F, 0.2F);
             }
+        } else if (!plugin.getOni().contains(damager) && plugin.getOni().contains(target)) {
+            //殴った方が逃げ、殴られた方が鬼
         }
     }
 }

@@ -24,7 +24,6 @@ public class OniTouchEvent implements Listener {
         if (!(e.getDamager() instanceof Player) || !(e.getEntity() instanceof Player)) {
             return;
         }
-
         //ゲーム中か
         if (!plugin.isGaming()) {
             e.setCancelled(true);

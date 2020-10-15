@@ -10,8 +10,8 @@
     <list default="true" id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="" />
 =======
     <list default="true" id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
     </list>
 >>>>>>> e534a64ca21b1036f716f32854d96ee25901e152
@@ -127,10 +127,16 @@
       <workItem from="1602592716566" duration="4068000" />
 =======
       <workItem from="1602592716566" duration="4011000" />
+<<<<<<< Updated upstream
       <workItem from="1602740374200" duration="4476000" />
 <<<<<<< Updated upstream
 =======
 >>>>>>> e534a64ca21b1036f716f32854d96ee25901e152
+>>>>>>> Stashed changes
+=======
+      <workItem from="1602740374200" duration="4680000" />
+      <workItem from="1602763293502" duration="223000" />
+      <workItem from="1602763523954" duration="232000" />
 >>>>>>> Stashed changes
     </task>
     <servers />
