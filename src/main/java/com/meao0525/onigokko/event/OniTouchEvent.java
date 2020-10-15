@@ -21,10 +21,22 @@ public class OniTouchEvent implements Listener {
         if (!(e.getDamager() instanceof Player) || !(e.getEntity() instanceof Player)) {
             return;
         }
+
+        //ゲーム中か
+        if (!plugin.isGaming()) {
+            e.setCancelled(true);
+            return;
+        }
+
         //鬼に殴られた！！！
         Player damager = (Player)e.getDamager();
         Player target = (Player)e.getEntity();
         if (plugin.getOni().contains(damager) && !(plugin.getOni().contains(target))) {
+            //捕まってる人
+            if (target.getWalkSpeed() == 0.0F) {
+                e.setCancelled(true);
+                return;
+            }
             //ダメージをほぼ失くす（エフェクトは欲しい）
             e.setDamage(0.1);
             switch (plugin.getMode()) {
@@ -32,9 +44,8 @@ public class OniTouchEvent implements Listener {
                     //鬼入れ替え
                     plugin.getOni().add(target);
                     plugin.getOni().remove(damager);
-                    //テレポート
-                    target.teleport(plugin.getOniStartloc());
-                    damager.teleport(plugin.getNigeStartloc());
+                    plugin.makeOni(target);
+                    plugin.makeNige(damager);
                     //イベントの登録しなおし
                     plugin.registerEvent();
                     break;
@@ -50,8 +61,7 @@ public class OniTouchEvent implements Listener {
                 case FUEONI:
                     //鬼増やす
                     plugin.getOni().add(target);
-                    //テレポート
-                    target.teleport(plugin.getOniStartloc());
+                    plugin.makeOni(target);
                     //イベントの登録しなおし
                     plugin.registerEvent();
                     break;

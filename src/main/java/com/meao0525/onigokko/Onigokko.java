@@ -4,12 +4,14 @@ import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
 import com.meao0525.onigokko.event.OniTouchEvent;
 import com.meao0525.onigokko.game.Mode;
+import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Objective;
@@ -91,15 +93,10 @@ public final class Onigokko extends JavaPlugin {
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (oni.contains(p)) {
-                //鬼チームに所属
-                oniTeam.addEntry(p.getName());
-                //初期地点に移動
-                p.teleport(oniStartloc);
+                //鬼になーれ
+                makeOni(p);
             } else {
-                //逃げチームに所属
-                nigeTeam.addEntry(p.getName());
-                //初期地点に移動
-                p.teleport(nigeStartloc);
+                makeNige(p);
             }
             //効果音大事
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_SHOOT, 3.0F, 3.0F);
@@ -134,10 +131,38 @@ public final class Onigokko extends JavaPlugin {
         }
     }
 
+    public void makeOni(Player player) {
+        //鬼チームに所属
+        oniTeam.addEntry(player.getName());
+        //初期地点に移動
+        player.teleport(oniStartloc);
+        //装備渡す
+        player.getInventory().setHelmet(OnigoItem.ONI_HELMET.toItemStack());
+        player.getInventory().setChestplate(OnigoItem.ONI_CHESTPLATE.toItemStack());
+        player.getInventory().setLeggings(OnigoItem.ONI_LEGGINGS.toItemStack());
+        player.getInventory().setBoots(OnigoItem.ONI_BOOTS.toItemStack());
+        //鬼用スコアボードに変える
+    }
+
+    public void makeNige(Player player) {
+        //逃げチームに所属
+        nigeTeam.addEntry(player.getName());
+        //初期地点に移動
+        player.teleport(nigeStartloc);
+        //装備消す
+        player.getInventory().setHelmet(new ItemStack(Material.AIR));
+        player.getInventory().setChestplate(new ItemStack(Material.AIR));
+        player.getInventory().setLeggings(new ItemStack(Material.AIR));
+        player.getInventory().setBoots(new ItemStack(Material.AIR));
+        //逃げ用スコアボードに変える
+    }
+
     public void registerEvent() {
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
     }
 
+
+    /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
     public boolean isGaming() {
         return Gaming;
     }
@@ -202,6 +227,8 @@ public final class Onigokko extends JavaPlugin {
         return oniTeam;
     }
 
+
+    //タイマー用内部クラス
     private class GameTimer extends BukkitRunnable {
 
         private int time;
