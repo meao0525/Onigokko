@@ -19,9 +19,10 @@ public class GameCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!plugin.isGaming()) {
-            //ゲーム中じゃない
+        if (plugin.isGaming()) {
+            //ゲーム中
             sender.sendMessage(ChatColor.GRAY + "このコマンドはゲーム中に使用できません");
+            return true;
         }
         String sub;
         //引数がない場合はhelpを実行させる
@@ -51,7 +52,7 @@ public class GameCommand implements CommandExecutor {
                 //表示用文字列
                 String infoMsg = ChatColor.GOLD + "==========[どこでも鬼ごっこ]===========\n"
                         + ChatColor.RESET + "鬼ごっこゲームモード: " + ChatColor.AQUA + plugin.getMode().toString() + "\n"
-                        + ChatColor.RESET + "マップ中心地点: " + ChatColor.AQUA + plugin.getCenter().getX() + " " + plugin.getCenter().getY() + " " + plugin.getCenter().getZ() + "\n"
+                        + ChatColor.RESET + "マップ中心地点: " + ChatColor.AQUA + plugin.getCenter().getX() + " " + plugin.getCenter().getZ() + "\n"
                         + ChatColor.RESET + "マップ範囲: " + ChatColor.AQUA + plugin.getSize() + "\n"
                         + ChatColor.RESET + "ゲーム時間: " + ChatColor.AQUA + plugin.getTime() + "\n" + ChatColor.RESET;
                 //未設定のときは表示しない
