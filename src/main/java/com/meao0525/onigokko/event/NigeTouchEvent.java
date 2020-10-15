@@ -49,6 +49,7 @@ public class NigeTouchEvent implements Listener {
             }
         } else if (!plugin.getOni().contains(damager) && plugin.getOni().contains(target)) {
             //殴った方が逃げ、殴られた方が鬼
+            e.setCancelled(true);
         }
     }
 }
