@@ -122,7 +122,7 @@ public class GameCommand implements CommandExecutor {
             case "nigestartloc":
                 if (args.length == 2) {
                     //コマンド使用者の現在地の座標を取得(intで取得するため)
-                    plugin.setNigeStartloc(sender.getEyeLocation().getBlock().getLocation());
+                    plugin.setNigeStartloc(sender.getLocation().getBlock().getLocation());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "逃げの初期地点を現在座標\n"
                             + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ() + "\n"
                             + ChatColor.RESET + "に設定しました");
@@ -133,7 +133,7 @@ public class GameCommand implements CommandExecutor {
             case "onistartloc":
                 if (args.length == 2) {
                     //コマンド使用者の現在地の座標を取得(intで取得するため)
-                    plugin.setOniStartloc(sender.getEyeLocation().getBlock().getLocation());
+                    plugin.setOniStartloc(sender.getLocation().getBlock().getLocation());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "鬼の初期地点を現在座標\n"
                             + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ() + "\n"
                             + ChatColor.RESET + "に設定しました");
@@ -144,7 +144,7 @@ public class GameCommand implements CommandExecutor {
             case "center":
                 if (args.length == 2) {
                     //センター設定(コマンド使用者の現在地の座標を取得)
-                    plugin.setCenter(sender.getEyeLocation().getBlock().getLocation());
+                    plugin.setCenter(sender.getLocation().getBlock().getLocation());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "中心地点を現在座標\n"
                             + ChatColor.AQUA + plugin.getCenter().getX() + " " + plugin.getCenter().getY() + " " + plugin.getCenter().getZ() + "\n"
                             + ChatColor.RESET + "に設定しました");
@@ -155,7 +155,7 @@ public class GameCommand implements CommandExecutor {
             case "prison":
                 if (args.length == 2) {
                     //コマンド使用者の現在地の座標を取得(intで取得するため)
-                    plugin.setPrison(sender.getEyeLocation().getBlock().getLocation());
+                    plugin.setPrison(sender.getLocation().getBlock().getLocation());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "牢屋地点を現在座標\n"
                             + ChatColor.AQUA + plugin.getPrison().getX() + " " + plugin.getPrison().getY() + " " + plugin.getPrison().getZ() + "\n"
                             + ChatColor.RESET + "に設定しました");
