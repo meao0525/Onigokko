@@ -1,11 +1,15 @@
 package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
+import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class DefaultGameEvent implements Listener {
 
@@ -36,6 +40,23 @@ public class DefaultGameEvent implements Listener {
         if ((e.getEntity() instanceof Player)
                 && (e.getCause().equals(EntityDamageEvent.DamageCause.FALL))) {
             e.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void InventoryClickEventListener(InventoryClickEvent e) {
+        if (!plugin.isGaming()) {
+            return;
+        }
+        if (e.getInventory().getType().equals(InventoryType.PLAYER)) {
+            //触られたアイテム
+            ItemStack item = e.getCurrentItem();
+            for (OnigoItem oi : OnigoItem.values()) {
+                if (item.equals(oi.toItemStack()) && !(oi.isCanTouch())) {
+                    //触っちゃいけないオニゴアイテムです
+                    e.setCancelled(true);
+                }
+            }
         }
     }
 }
