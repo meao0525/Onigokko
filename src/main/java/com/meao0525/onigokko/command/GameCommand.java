@@ -19,6 +19,10 @@ public class GameCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!plugin.isGaming()) {
+            //ゲーム中じゃない
+            sender.sendMessage(ChatColor.GRAY + "このコマンドはゲーム中に使用できません");
+        }
         String sub;
         //引数がない場合はhelpを実行させる
         if (args.length == 0) {

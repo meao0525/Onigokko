@@ -44,9 +44,6 @@ public class OniTouchEvent implements Listener {
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
                     + ChatColor.RESET + damager.getDisplayName() + " が "
                     + ChatColor.RESET + target.getDisplayName() + " を捕まえました");
-            //エフェクト
-            target.sendTitle("", ChatColor.RED + "確保された...", 0, 1, 1);
-            target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
             switch (plugin.getMode()) {
                 case ONIGOKKO:
                     //鬼入れ替え
@@ -80,6 +77,9 @@ public class OniTouchEvent implements Listener {
                     target.setGlowing(true);
                     break;
             }
+            //エフェクト
+            target.sendTitle("", ChatColor.RED + "確保された...", 0, 3, 1);
+            target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.5F);
         }
     }
 }

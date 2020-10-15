@@ -30,6 +30,7 @@ public final class Onigokko extends JavaPlugin {
     private Mode mode = Mode.ONIGOKKO;
     //マップ
     private WorldBorder border;
+    private Location center;
     private Location defaultCenter;
     private double defaultSize;
     private Location prison;
@@ -61,11 +62,11 @@ public final class Onigokko extends JavaPlugin {
         board = manager.getMainScoreboard();
         //チーム設定
         nigeTeam = board.registerNewTeam("逃げチーム");
-        nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OWN_TEAM);
+        nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
         nigeTeam.setAllowFriendlyFire(true);
         nigeTeam.setColor(ChatColor.BLUE);
         oniTeam = board.registerNewTeam("鬼チーム");
-        oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OWN_TEAM);
+        oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
         oniTeam.setAllowFriendlyFire(false);
         oniTeam.setColor(ChatColor.RED);
 
@@ -123,7 +124,11 @@ public final class Onigokko extends JavaPlugin {
             //リスポーンを元に戻す
             p.setBedSpawnLocation(getCenter(), true);
             //全員中央に
-            p.teleport(getCenter());
+            p.teleport(center);
+            //足の速さ戻す
+            p.setWalkSpeed(0.2F);
+            //発行消す
+            p.setGlowing(false);
             //チーム解散
             if (oni.contains(p)) {
                 oniTeam.removeEntry(p.getName());
@@ -192,7 +197,10 @@ public final class Onigokko extends JavaPlugin {
 
     public Location getCenter() { return this.border.getCenter(); }
 
-    public void setCenter(Location center) { this.border.setCenter(center); }
+    public void setCenter(Location center) {
+        this.center = center;
+        this.border.setCenter(center);
+    }
 
     public double getSize() { return this.border.getSize(); }
 
