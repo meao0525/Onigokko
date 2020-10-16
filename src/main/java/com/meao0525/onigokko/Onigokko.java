@@ -50,6 +50,7 @@ public final class Onigokko extends JavaPlugin {
     private Team oniTeam;
     //タイマー
     GameTimer timer;
+    private BossBar timerBar;
 
 
     @Override
@@ -118,6 +119,8 @@ public final class Onigokko extends JavaPlugin {
         //イベント登録
         registerEvent();
         //タイマースタート
+        //ボスバー作成
+        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.RED, BarStyle.SOLID, BarFlag.CREATE_FOG);
         timer = new GameTimer(time);
         timer.runTaskTimer(this, 0, 20);
     }
@@ -126,6 +129,8 @@ public final class Onigokko extends JavaPlugin {
         //ゲーム終了
         Gaming = false;
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ゲームが終了しました");
+        //ボスバー消す
+        timerBar.removeAll();
         //タイマー終了
         timer.cancel();
         for (Player p : Bukkit.getOnlinePlayers()) {
@@ -261,13 +266,12 @@ public final class Onigokko extends JavaPlugin {
 
         private int time;
         private double maxTime;
-        private BossBar timerBar;
+
 
         GameTimer(int time) {
             this.time = time;
             this.maxTime = time;
-            //ボスバー作成
-            timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.RED, BarStyle.SOLID, BarFlag.CREATE_FOG);
+
             //全プレイヤーにタイマー用ボスバーを表示
             for (Player p : Bukkit.getOnlinePlayers()) {
                 timerBar.addPlayer(p);
@@ -285,8 +289,6 @@ public final class Onigokko extends JavaPlugin {
                     }
                 }
             } else {
-                //ボスバー消す
-                timerBar.removeAll();
                 //ゲーム終了
                 end();
             }
