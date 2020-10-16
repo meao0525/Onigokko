@@ -39,7 +39,7 @@ public final class Onigokko extends JavaPlugin {
     private Location nigeStartloc;
     private Location oniStartloc;
     //時間
-    private int time = 0;
+    private int time = 300;
     //鬼リスト
     private ArrayList<Player> oni = new ArrayList<>();
     //スコアボード
