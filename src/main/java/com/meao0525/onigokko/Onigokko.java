@@ -137,7 +137,7 @@ public final class Onigokko extends JavaPlugin {
             //リスポーンを元に戻す
             p.setBedSpawnLocation(center, true);
             //全員中央に
-            p.teleport(center);
+            if (center != null) { p.teleport(center); }
             //チーム解散
             if (oni.contains(p)) {
                 oniTeam.removeEntry(p.getName());
