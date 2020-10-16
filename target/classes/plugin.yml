@@ -9,3 +9,8 @@ commands:
       ONIGOKKO game command
     usage:
       /<command> help
+    permission:
+      default-permission
+    permission-message:
+      You do not have permission. denaositekina.
+
