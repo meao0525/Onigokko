@@ -130,13 +130,9 @@ public final class Onigokko extends JavaPlugin {
         timer.cancel();
         for (Player p : Bukkit.getOnlinePlayers()) {
             //リスポーンを元に戻す
-            p.setBedSpawnLocation(getCenter(), true);
+            p.setBedSpawnLocation(center, true);
             //全員中央に
             p.teleport(center);
-            //足の速さ戻す
-            p.setWalkSpeed(0.2F);
-            //発行消す
-            p.setGlowing(false);
             //チーム解散
             if (oni.contains(p)) {
                 oniTeam.removeEntry(p.getName());
@@ -147,6 +143,10 @@ public final class Onigokko extends JavaPlugin {
                 p.getInventory().setBoots(new ItemStack(Material.AIR));
             } else {
                 nigeTeam.removeEntry(p.getName());
+                //足の速さ戻す
+                p.setWalkSpeed(0.2F);
+                //発行消す
+                p.setGlowing(false);
             }
             //エフェクト
             p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
