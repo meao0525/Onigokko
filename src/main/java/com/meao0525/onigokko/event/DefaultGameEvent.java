@@ -36,7 +36,9 @@ public class DefaultGameEvent implements Listener {
                 plugin.makeNige(player);
             }
             //タイマー表示
-            plugin.getTimerBar().addPlayer(player);
+            if (plugin.getTimerBar() != null) {
+                plugin.getTimerBar().addPlayer(player);
+            }
 
         } else {
             //ゲーム中じゃない
