@@ -83,6 +83,8 @@ public final class Onigokko extends JavaPlugin {
         border = getServer().getWorlds().get(0).getWorldBorder();
         defaultCenter = border.getCenter();
         defaultSize = border.getSize();
+        //タイマーバー作成
+        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID, BarFlag.CREATE_FOG);
     }
 
     @Override
@@ -108,6 +110,8 @@ public final class Onigokko extends JavaPlugin {
             } else {
                 makeNige(p);
             }
+            //タイマー用ボスバー表示
+            timerBar.addPlayer(p);
             //効果音大事
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_SHOOT, 3.0F, 3.0F);
         }
@@ -116,8 +120,7 @@ public final class Onigokko extends JavaPlugin {
             prison = oniStartloc;
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "監獄座標を鬼の初期地点に設定しました");
         }
-        //ボスバー作成
-        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID, BarFlag.CREATE_FOG);
+
         //イベント登録
         registerEvent();
         //タイマースタート
@@ -129,8 +132,6 @@ public final class Onigokko extends JavaPlugin {
         //ゲーム終了
         Gaming = false;
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ゲームが終了しました");
-        //ボスバー消す
-        timerBar.removeAll();
         //タイマー終了
         timer.cancel();
         for (Player p : Bukkit.getOnlinePlayers()) {
@@ -138,8 +139,10 @@ public final class Onigokko extends JavaPlugin {
             p.setBedSpawnLocation(center, true);
             //全員中央に
             if (center != null) { p.teleport(center); }
+            //ボスバー消す
+            timerBar.removePlayer(p);
             //チーム解散
-            if (oni.contains(p)) {
+            if (oni.contains(p.getName())) {
                 oniTeam.removeEntry(p.getName());
                 //装備消す
                 p.getInventory().setHelmet(new ItemStack(Material.AIR));
@@ -274,11 +277,6 @@ public final class Onigokko extends JavaPlugin {
         GameTimer(int time) {
             this.time = time;
             this.maxTime = time;
-
-            //全プレイヤーにタイマー用ボスバーを表示
-            for (Player p : Bukkit.getOnlinePlayers()) {
-                timerBar.addPlayer(p);
-            }
         }
 
         @Override
