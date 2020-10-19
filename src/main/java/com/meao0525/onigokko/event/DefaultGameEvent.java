@@ -2,6 +2,7 @@ package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.OnigoItem;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -58,13 +59,13 @@ public class DefaultGameEvent implements Listener {
 
     @EventHandler
     public void MoveEventListener(PlayerMoveEvent e) {
-        if (!plugin.isGaming()) {
+        if (!plugin.isGaming() || !e.getPlayer().getGameMode().equals(GameMode.ADVENTURE)) {
             return;
         }
         Player player = e.getPlayer();
-        //捕まってる人は動けないよ
+        //ジャンプで動けないようにする
         if ((player.isGlowing()) && (player.getWalkSpeed() == 0.0)) {
-            if (e.getFrom().getBlock().getLocation().equals(e.getTo().getBlock().getLocation())) {
+            if (e.getFrom().getY() < e.getTo().getY()) {
                 e.setCancelled(true);
             }
         }
