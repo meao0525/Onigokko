@@ -102,7 +102,7 @@ public final class Onigokko extends JavaPlugin {
         Gaming = true;
 
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (oni.contains(p)) {
+            if (oni.contains(p.getName())) {
                 //鬼になーれ
                 makeOni(p);
             } else {
@@ -116,11 +116,11 @@ public final class Onigokko extends JavaPlugin {
             prison = oniStartloc;
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "監獄座標を鬼の初期地点に設定しました");
         }
+        //ボスバー作成
+        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID, BarFlag.CREATE_FOG);
         //イベント登録
         registerEvent();
         //タイマースタート
-        //ボスバー作成
-        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.RED, BarStyle.SOLID, BarFlag.CREATE_FOG);
         timer = new GameTimer(time);
         timer.runTaskTimer(this, 0, 20);
     }
