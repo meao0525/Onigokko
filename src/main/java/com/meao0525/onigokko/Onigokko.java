@@ -41,7 +41,7 @@ public final class Onigokko extends JavaPlugin {
     //時間
     private int time = 300;
     //鬼リスト
-    private ArrayList<Player> oni = new ArrayList<>();
+    private ArrayList<String> oni = new ArrayList<>();
     //スコアボード
     private ScoreboardManager manager;
     private Scoreboard board;
@@ -248,7 +248,7 @@ public final class Onigokko extends JavaPlugin {
         this.oniStartloc = oniStartloc;
     }
 
-    public ArrayList<Player> getOni() {
+    public ArrayList<String> getOni() {
         return oni;
     }
 

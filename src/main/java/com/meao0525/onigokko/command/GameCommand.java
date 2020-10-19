@@ -46,7 +46,9 @@ public class GameCommand implements CommandExecutor {
                         "           prison <xyz> --- ケイドロ用牢屋地点\n" +
                         "/onigo mode <mode> --- 鬼ごっこゲームモードの設定\n" +
                         "/onigo oni <name> --- 鬼の選出\n" +
-                        "/onigo start --- ゲームスタート");
+                        "/onigo reset --- ゲーム設定のリセット\n" +
+                        "/onigo start --- ゲームスタート\n" +
+                        "/onigo stop --- ゲームを強制終了");
                 break;
 
             case "info":
@@ -64,8 +66,8 @@ public class GameCommand implements CommandExecutor {
                 //info送信
                 sender.sendMessage(infoMsg);
                 //鬼のプレイヤー名表示
-                for (Player p : plugin.getOni()) {
-                    sender.sendMessage(p.getDisplayName() + " ");
+                for (String n : plugin.getOni()) {
+                    sender.sendMessage(n + " ");
                 }
                 break;
 
@@ -230,7 +232,7 @@ public class GameCommand implements CommandExecutor {
             for (Player p : Bukkit.getOnlinePlayers()) {
                 //名前の一致するプレイヤーを鬼リストにいれる
                 if (args[1].equalsIgnoreCase(p.getName())) {
-                    plugin.getOni().add(p);
+                    plugin.getOni().add(p.getName());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.AQUA
                             + args[1] + ChatColor.RESET + " を鬼に追加しました");
                     return true;

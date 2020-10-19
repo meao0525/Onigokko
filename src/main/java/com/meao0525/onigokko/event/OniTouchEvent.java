@@ -34,7 +34,7 @@ public class OniTouchEvent implements Listener {
         //鬼に殴られた！！！
         Player damager = (Player)e.getDamager();
         Player target = (Player)e.getEntity();
-        if (plugin.getOni().contains(damager) && !(plugin.getOni().contains(target))) {
+        if (plugin.getOni().contains(damager.getName()) && !(plugin.getOni().contains(target.getName()))) {
             //捕まってる人
             if (target.getWalkSpeed() == 0.0F) {
                 e.setCancelled(true);
@@ -48,8 +48,8 @@ public class OniTouchEvent implements Listener {
             switch (plugin.getMode()) {
                 case ONIGOKKO:
                     //鬼入れ替え
-                    plugin.getOni().add(target);
-                    plugin.getOni().remove(damager);
+                    plugin.getOni().add(target.getName());
+                    plugin.getOni().remove(damager.getName());
                     plugin.makeOni(target);
                     plugin.makeNige(damager);
                     //イベントの登録しなおし
@@ -66,7 +66,7 @@ public class OniTouchEvent implements Listener {
 
                 case FUEONI:
                     //鬼増やす
-                    plugin.getOni().add(target);
+                    plugin.getOni().add(target.getName());
                     plugin.makeOni(target);
                     //イベントの登録しなおし
                     plugin.registerEvent();
@@ -78,7 +78,8 @@ public class OniTouchEvent implements Listener {
                     target.setGlowing(true);
                     break;
             }
-            if (checkEnd()) {
+            if (plugin.getNigeTeam().getEntries().isEmpty()) {
+                //逃げがいなくなったら終了
                 Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.AQUA + "鬼チーム" + ChatColor.RESET + "の勝利！");
                 plugin.end();
             }
@@ -88,12 +89,4 @@ public class OniTouchEvent implements Listener {
         }
     }
 
-    public boolean checkEnd() {
-        for(Player p : Bukkit.getOnlinePlayers()) {
-            if (!plugin.getOni().contains(p)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
