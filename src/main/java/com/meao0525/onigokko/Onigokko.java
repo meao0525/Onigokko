@@ -260,6 +260,9 @@ public final class Onigokko extends JavaPlugin {
         return oniTeam;
     }
 
+    public BossBar getTimerBar() {
+        return timerBar;
+    }
 
     //タイマー用内部クラス
     private class GameTimer extends BukkitRunnable {

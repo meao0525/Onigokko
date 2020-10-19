@@ -34,6 +34,9 @@ public class DefaultGameEvent implements Listener {
                 //両方のチームに所属してないなら逃げチームに入れる
                 plugin.makeNige(player);
             }
+            //タイマー表示
+            plugin.getTimerBar().addPlayer(player);
+
         } else {
             //ゲーム中じゃない
             if (oniTeam.hasEntry(player.getName())) {
