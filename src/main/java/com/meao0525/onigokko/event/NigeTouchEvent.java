@@ -34,6 +34,7 @@ public class NigeTouchEvent implements Listener {
         Player damager = (Player)e.getDamager();
         Player target = (Player)e.getEntity();
         if (!(plugin.getOni().contains(damager.getName())) && !(plugin.getOni().contains(target.getName()))) {
+            e.setCancelled(true);
             //お前も捕まってるやないかい
             if (damager.isGlowing() && damager.getWalkSpeed() == 0.0) { return; }
             //捕まってる人を殴った
@@ -48,7 +49,6 @@ public class NigeTouchEvent implements Listener {
                 target.sendTitle("", ChatColor.AQUA + "解放！", 0, 40, 20);
                 target.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3F, 0.2F);
             }
-            e.setCancelled(true);
 
         } else if (!(plugin.getOni().contains(damager.getName())) && plugin.getOni().contains(target.getName())) {
             //殴った方が逃げ、殴られた方が鬼

@@ -2,6 +2,7 @@ package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.OnigoItem;
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -35,10 +36,6 @@ public class DefaultGameEvent implements Listener {
                 //両方のチームに所属してないなら逃げチームに入れる
                 plugin.makeNige(player);
             }
-            //タイマー表示
-            if (plugin.getTimerBar() != null) {
-                plugin.getTimerBar().addPlayer(player);
-            }
 
         } else {
             //ゲーム中じゃない
@@ -56,6 +53,11 @@ public class DefaultGameEvent implements Listener {
                 //発行消す
                 player.setGlowing(false);
             }
+        }
+        try {
+            plugin.getTimerBar().addPlayer(player);
+        } catch (NullPointerException exc) {
+            player.sendMessage(ChatColor.GRAY + "タイマー用ボスバーの取得に失敗しました");
         }
     }
 
@@ -90,17 +92,16 @@ public class DefaultGameEvent implements Listener {
         if (!plugin.isGaming()) {
             return;
         }
-        if (e.getInventory().getType().equals(InventoryType.PLAYER)) {
-            //触られたアイテム
-            ItemStack item = e.getCurrentItem();
-            for (OnigoItem oi : OnigoItem.values()) {
-                String itemName = item.getItemMeta().getDisplayName();
-                String oiName = oi.toItemStack().getItemMeta().getDisplayName();
-                if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
-                    //触っちゃいけないオニゴアイテムです
-                    e.setCancelled(true);
-                }
+        //触られたアイテム
+        ItemStack item = e.getCurrentItem();
+        for (OnigoItem oi : OnigoItem.values()) {
+            String itemName = item.getItemMeta().getDisplayName();
+            String oiName = oi.toItemStack().getItemMeta().getDisplayName();
+            if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
+                //触っちゃいけないオニゴアイテムです
+                e.setCancelled(true);
             }
         }
+
     }
 }
