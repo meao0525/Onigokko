@@ -99,8 +99,8 @@ public class DefaultGameEvent implements Listener {
             if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
                 //触っちゃいけないオニゴアイテムです
                 e.setCancelled(true);
+                return;
             }
         }
-
     }
 }

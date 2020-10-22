@@ -107,8 +107,12 @@ public final class Onigokko extends JavaPlugin {
             if (oni.contains(p.getName())) {
                 //鬼になーれ
                 makeOni(p);
+                //初期地点に移動
+                p.teleport(oniStartloc);
             } else {
                 makeNige(p);
+                //初期地点に移動
+                p.teleport(nigeStartloc);
             }
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
@@ -165,8 +169,6 @@ public final class Onigokko extends JavaPlugin {
     public void makeOni(Player player) {
         //鬼チームに所属
         oniTeam.addEntry(player.getName());
-        //初期地点に移動
-        player.teleport(oniStartloc);
         //装備渡す
         player.getInventory().setHelmet(OnigoItem.ONI_HELMET.toItemStack());
         player.getInventory().setChestplate(OnigoItem.ONI_CHESTPLATE.toItemStack());
@@ -178,8 +180,6 @@ public final class Onigokko extends JavaPlugin {
     public void makeNige(Player player) {
         //逃げチームに所属
         nigeTeam.addEntry(player.getName());
-        //初期地点に移動
-        player.teleport(nigeStartloc);
         //装備消す
         player.getInventory().setHelmet(new ItemStack(Material.AIR));
         player.getInventory().setChestplate(new ItemStack(Material.AIR));

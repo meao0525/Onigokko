@@ -51,6 +51,7 @@ public class OniTouchEvent implements Listener {
                     plugin.getOni().add(target.getName());
                     plugin.getOni().remove(damager.getName());
                     plugin.makeOni(target);
+                    target.teleport(plugin.getOniStartloc());
                     plugin.makeNige(damager);
                     //イベントの登録しなおし
                     plugin.registerEvent();
@@ -68,6 +69,7 @@ public class OniTouchEvent implements Listener {
                     //鬼増やす
                     plugin.getOni().add(target.getName());
                     plugin.makeOni(target);
+                    target.teleport(plugin.getOniStartloc());
                     //イベントの登録しなおし
                     plugin.registerEvent();
                     break;
@@ -88,5 +90,4 @@ public class OniTouchEvent implements Listener {
             target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.1F);
         }
     }
-
 }
