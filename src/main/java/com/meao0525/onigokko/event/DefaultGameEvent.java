@@ -10,8 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scoreboard.Team;
@@ -25,7 +24,7 @@ public class DefaultGameEvent implements Listener {
     }
 
     @EventHandler
-    public void LoginEventListener(PlayerLoginEvent e) {
+    public void LoginEventListener(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         Team nigeTeam = plugin.getNigeTeam();
         Team oniTeam = plugin.getOniTeam();
