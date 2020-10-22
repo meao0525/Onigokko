@@ -1,6 +1,7 @@
 package com.meao0525.onigokko.game;
 
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -30,6 +31,12 @@ public enum OnigoItem {
         //メタ設定
         meta.setDisplayName(name);
         meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES,
+                          ItemFlag.HIDE_DESTROYS,
+                          ItemFlag.HIDE_ENCHANTS,
+                          ItemFlag.HIDE_PLACED_ON,
+                          ItemFlag.HIDE_POTION_EFFECTS,
+                          ItemFlag.HIDE_UNBREAKABLE);
         item.setItemMeta(meta);
 
         return item;
