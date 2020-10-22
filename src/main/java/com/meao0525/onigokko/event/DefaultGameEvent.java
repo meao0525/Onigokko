@@ -93,13 +93,15 @@ public class DefaultGameEvent implements Listener {
         }
         //触られたアイテム
         ItemStack item = e.getCurrentItem();
-        for (OnigoItem oi : OnigoItem.values()) {
-            String itemName = item.getItemMeta().getDisplayName();
-            String oiName = oi.toItemStack().getItemMeta().getDisplayName();
-            if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
-                //触っちゃいけないオニゴアイテムです
-                e.setCancelled(true);
-                return;
+        if (item != null && item.getItemMeta() != null) {
+            for (OnigoItem oi : OnigoItem.values()) {
+                String itemName = item.getItemMeta().getDisplayName();
+                String oiName = oi.toItemStack().getItemMeta().getDisplayName();
+                if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
+                    //触っちゃいけないオニゴアイテムです
+                    e.setCancelled(true);
+                    return;
+                }
             }
         }
     }
