@@ -138,6 +138,9 @@ public final class Onigokko extends JavaPlugin {
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ゲームが終了しました");
         //タイマー終了
         timer.cancel();
+        //結果発表おおおおおおお
+        Bukkit.broadcastMessage(ChatColor.GOLD + "----------[どこでも鬼ごっこ]----------\n"
+                + ChatColor.RESET + "↓↓ 最後まで逃げのびた人 ↓↓");
         for (Player p : Bukkit.getOnlinePlayers()) {
             //リスポーンを元に戻す
             p.setBedSpawnLocation(center, true);
@@ -155,6 +158,10 @@ public final class Onigokko extends JavaPlugin {
                 p.getInventory().setBoots(new ItemStack(Material.AIR));
             } else {
                 nigeTeam.removeEntry(p.getName());
+                //捕まってなかった人は発表
+                if (p.getWalkSpeed() != 0.0 && !p.isGlowing()) {
+                    Bukkit.broadcastMessage(ChatColor.AQUA + p.getName());
+                }
                 //足の速さ戻す
                 p.setWalkSpeed(0.2F);
                 //発行消す

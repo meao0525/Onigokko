@@ -35,6 +35,8 @@ public class DefaultGameEvent implements Listener {
                 //両方のチームに所属してないなら逃げチームに入れる
                 plugin.makeNige(player);
             }
+            //タイマー用ボスバー
+             plugin.getTimerBar().addPlayer(player);
 
         } else {
             //ゲーム中じゃない
@@ -52,11 +54,8 @@ public class DefaultGameEvent implements Listener {
                 //発行消す
                 player.setGlowing(false);
             }
-        }
-        try {
-            plugin.getTimerBar().addPlayer(player);
-        } catch (NullPointerException exc) {
-            player.sendMessage(ChatColor.GRAY + "タイマー用ボスバーの取得に失敗しました");
+            //タイマー用ボスバー消す
+            plugin.getTimerBar().removePlayer(player);
         }
     }
 

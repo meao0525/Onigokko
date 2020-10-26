@@ -41,7 +41,7 @@ public class NigeTouchEvent implements Listener {
             if ((target.isGlowing()) && (target.getWalkSpeed() == 0.0)) {
                 Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
                         + ChatColor.RESET + damager.getDisplayName() + " が "
-                        + ChatColor.RESET + target.getDisplayName() + " を　開放しました");
+                        + ChatColor.RESET + target.getDisplayName() + " を開放しました");
                 //元に戻す
                 target.setWalkSpeed(0.2F);
                 target.setGlowing(false);
