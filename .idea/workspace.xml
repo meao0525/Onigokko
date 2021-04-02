@@ -6,42 +6,28 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="" />
-=======
-    <list default="true" id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="">
+    <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
->>>>>>> e534a64ca21b1036f716f32854d96ee25901e152
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="downloadDocsAutomatically" value="true" />
-        <option name="downloadSourcesAutomatically" value="true" />
-        <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1f5g9JPI7E0Yky9VLuPbt1e8JVT" />
+  <component name="ProjectId" id="1qcHhxiLGA9no8yh8XGJi3FZryU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -49,42 +35,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gant" />
-  </component>
-  <component name="RunManager">
-    <configuration name="Onigokko build" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -103,96 +55,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="595c5287-441f-4201-ab4b-30cda86a018a" name="Default Changelist" comment="" />
-      <created>1595513214444</created>
+      <changelist id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="" />
+      <created>1617372080825</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595513214444</updated>
-      <workItem from="1595513216402" duration="524000" />
-      <workItem from="1595765852183" duration="738000" />
-      <workItem from="1595771921964" duration="3803000" />
-      <workItem from="1599139203049" duration="19000" />
-      <workItem from="1599657363816" duration="7925000" />
-      <workItem from="1599741865798" duration="13636000" />
-      <workItem from="1599915145621" duration="1691000" />
-      <workItem from="1601644526334" duration="12738000" />
-      <workItem from="1601719098164" duration="2242000" />
-      <workItem from="1601803668519" duration="1476000" />
-      <workItem from="1601906455153" duration="2093000" />
-      <workItem from="1601987440506" duration="9100000" />
-      <workItem from="1602216240658" duration="225000" />
-      <workItem from="1602245865757" duration="3120000" />
-      <workItem from="1602319464593" duration="6415000" />
-<<<<<<< HEAD
-      <workItem from="1602592716566" duration="4068000" />
-=======
-      <workItem from="1602592716566" duration="4011000" />
-<<<<<<< Updated upstream
-      <workItem from="1602740374200" duration="4476000" />
-<<<<<<< Updated upstream
-=======
->>>>>>> e534a64ca21b1036f716f32854d96ee25901e152
->>>>>>> Stashed changes
-=======
-      <workItem from="1602740374200" duration="4680000" />
-      <workItem from="1602763293502" duration="223000" />
-      <workItem from="1602763523954" duration="232000" />
->>>>>>> Stashed changes
+      <updated>1617372080825</updated>
+      <workItem from="1617372084797" duration="4548000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="610" y="99" key="#Onigokko_build" timestamp="1601647383436">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="610" y="99" key="#Onigokko_build/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601647383436" />
-    <state x="552" y="178" key="#Project_Structure" timestamp="1599660978721">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1599660978721" />
-    <state x="414" y="174" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601647122175">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601647122175" />
-    <state x="574" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1602742552631">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="574" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1602742552631" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1602324441322" />
-    <state x="717" y="371" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602252191949">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="717" y="371" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1602252191949" />
-    <state x="767" y="342" key="FileChooserDialogImpl" timestamp="1602252551578">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="767" y="342" key="FileChooserDialogImpl/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1602252551578" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1601989962679">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1601989962679">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1601989962679">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1601989962679">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601989962679" />
-    <state x="468" y="162" key="SettingsEditor" timestamp="1602252562338">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="468" y="162" key="SettingsEditor/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1602252562338" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601907407117">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.305.1366.728@0.0.1920.1040" timestamp="1601907407117" />
   </component>
 </project>

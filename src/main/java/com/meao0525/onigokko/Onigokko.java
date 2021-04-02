@@ -16,10 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
-import org.bukkit.scoreboard.Team;
+import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -44,7 +41,8 @@ public final class Onigokko extends JavaPlugin {
     private ArrayList<String> oni = new ArrayList<>();
     //スコアボード
     private ScoreboardManager manager;
-    private Scoreboard board;
+    private Scoreboard board; //ゲーム用
+    private Scoreboard info; //設定用
     //チーム
     private Team nigeTeam;
     private Team oniTeam;
@@ -62,22 +60,11 @@ public final class Onigokko extends JavaPlugin {
 
         //スコアボード設定
         manager = Bukkit.getScoreboardManager();
-        board = manager.getMainScoreboard();
-        //チーム設定
-        nigeTeam = board.getTeam("nigeteam");
-        oniTeam = board.getTeam("oniteam");
-        if (nigeTeam == null) {
-            nigeTeam = board.registerNewTeam("nigeteam");
-            nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
-            nigeTeam.setAllowFriendlyFire(true);
-            nigeTeam.setColor(ChatColor.BLUE);
-        }
-        if (oniTeam == null) {
-            oniTeam = board.registerNewTeam("oniteam");
-            oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
-            oniTeam.setAllowFriendlyFire(false);
-            oniTeam.setColor(ChatColor.RED);
-        }
+        board = manager.getNewScoreboard();
+        info = manager.getNewScoreboard();
+        //登録
+        registerTeam(board);
+
 
         //ボーダー取得
         border = getServer().getWorlds().get(0).getWorldBorder();
@@ -201,6 +188,23 @@ public final class Onigokko extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
     }
 
+    public void registerTeam(Scoreboard board) {
+        //チーム設定
+        nigeTeam = board.getTeam("nigeteam");
+        oniTeam = board.getTeam("oniteam");
+        if (nigeTeam == null) {
+            nigeTeam = board.registerNewTeam("nigeteam");
+            nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            nigeTeam.setAllowFriendlyFire(true);
+            nigeTeam.setColor(ChatColor.BLUE);
+        }
+        if (oniTeam == null) {
+            oniTeam = board.registerNewTeam("oniteam");
+            oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            oniTeam.setAllowFriendlyFire(false);
+            oniTeam.setColor(ChatColor.RED);
+        }
+    }
 
     /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
     public boolean isGaming() {
@@ -272,6 +276,10 @@ public final class Onigokko extends JavaPlugin {
 
     public BossBar getTimerBar() {
         return timerBar;
+    }
+
+    public Scoreboard getInfo() {
+        return info;
     }
 
     //タイマー用内部クラス
