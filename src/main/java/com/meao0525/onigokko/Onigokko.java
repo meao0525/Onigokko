@@ -30,8 +30,6 @@ public final class Onigokko extends JavaPlugin {
     //マップ
     private WorldBorder border;
     private Location center;
-    private Location defaultCenter;
-    private double defaultSize;
     private Location prison;
     private Location nigeStartloc;
     private Location oniStartloc;
@@ -68,8 +66,6 @@ public final class Onigokko extends JavaPlugin {
 
         //ボーダー取得
         border = getServer().getWorlds().get(0).getWorldBorder();
-        defaultCenter = border.getCenter();
-        defaultSize = border.getSize();
         //タイマーバー作成
         timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID, BarFlag.CREATE_FOG);
     }
