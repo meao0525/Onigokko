@@ -19,7 +19,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
-import java.util.Timer;
+import java.util.Collections;
 
 public final class Onigokko extends JavaPlugin {
 
@@ -31,8 +31,8 @@ public final class Onigokko extends JavaPlugin {
     private WorldBorder border;
     private Location center;
     private Location prison;
-    private Location nigeStartloc;
-    private Location oniStartloc;
+    private ArrayList<Location> nigeStartloc = new ArrayList<>();
+    private ArrayList<Location> oniStartloc = new ArrayList<>();
     //時間
     private int time = 300;
     //鬼リスト
@@ -79,7 +79,12 @@ public final class Onigokko extends JavaPlugin {
     public void reset() {
         //ボーダーをリセット
         border.reset();
-        Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "ボーダーをリセットしました");
+        //初期地点リセット
+        prison = null;
+        nigeStartloc.clear();
+        oniStartloc .clear();
+
+        Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "座標設定をリセットしました");
     }
 
     public void start() {
@@ -90,12 +95,12 @@ public final class Onigokko extends JavaPlugin {
             if (oni.contains(p.getName())) {
                 //鬼になーれ
                 makeOni(p);
-                //初期地点に移動
-                p.teleport(oniStartloc);
+                //ランダムな初期地点に移動
+                p.teleport(getRandomStartLoc(oniStartloc));
             } else {
                 makeNige(p);
-                //初期地点に移動
-                p.teleport(nigeStartloc);
+                //ランダムな初期地点に移動
+                p.teleport(getRandomStartLoc(nigeStartloc));
             }
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
@@ -104,7 +109,7 @@ public final class Onigokko extends JavaPlugin {
         }
         //牢屋座標設定
         if ((mode.equals(Mode.KEIDORO))&&(prison == null)) {
-            prison = oniStartloc;
+            prison = getRandomStartLoc(oniStartloc);
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "監獄座標を鬼の初期地点に設定しました");
         }
 
@@ -202,6 +207,13 @@ public final class Onigokko extends JavaPlugin {
         }
     }
 
+    public Location getRandomStartLoc(ArrayList<Location> list) {
+        //シャッフル
+        Collections.shuffle(list);
+        //始めの値を返す
+        return list.get(0);
+    }
+
     /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
     public boolean isGaming() {
         return Gaming;
@@ -242,20 +254,12 @@ public final class Onigokko extends JavaPlugin {
         this.prison = prison;
     }
 
-    public Location getNigeStartloc() {
+    public ArrayList<Location> getNigeStartloc() {
         return nigeStartloc;
     }
 
-    public void setNigeStartloc(Location nigeStartloc) {
-        this.nigeStartloc = nigeStartloc;
-    }
-
-    public Location getOniStartloc() {
+    public ArrayList<Location> getOniStartloc() {
         return oniStartloc;
-    }
-
-    public void setOniStartloc(Location oniStartloc) {
-        this.oniStartloc = oniStartloc;
     }
 
     public ArrayList<String> getOni() {

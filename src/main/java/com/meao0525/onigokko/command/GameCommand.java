@@ -4,6 +4,7 @@ import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.Mode;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -80,15 +81,16 @@ public class GameCommand implements CommandExecutor {
 
             case "reset":
                 plugin.reset();
+                reloadInfo();
                 break;
 
             case "start":
                 //設定漏れはないか
-                if (plugin.getNigeStartloc() == null) {
+                if (plugin.getNigeStartloc().isEmpty()) {
                     sender.sendMessage(ChatColor.GRAY + "逃げの初期地点が設定されていません");
-                } else if (plugin.getOniStartloc() == null) {
+                } else if (plugin.getOniStartloc().isEmpty()) {
                     sender.sendMessage(ChatColor.GRAY + "鬼の初期地点が設定されていません");
-                } else if (plugin.getOni().size() == 0) {
+                } else if (plugin.getOni().isEmpty()) {
                     sender.sendMessage(ChatColor.GRAY + "おいおい、鬼がいねーぞ");
                 } else {
                     //スタート処理
@@ -132,9 +134,12 @@ public class GameCommand implements CommandExecutor {
                     + ChatColor.RESET + "マップ範囲: " + ChatColor.AQUA + plugin.getSize() + "\n"
                     + ChatColor.RESET + "ゲーム時間: " + ChatColor.AQUA + plugin.getTime() + "\n" + ChatColor.RESET;
             //未設定のときは表示しない
-            if (plugin.getPrison() != null) { infoMsg += ChatColor.RESET + "監獄座標: " + ChatColor.AQUA + plugin.getPrison().getX() + " " + plugin.getPrison().getY() + " " +plugin.getPrison().getZ() + "\n"; }
-            if (plugin.getNigeStartloc() != null) { infoMsg += ChatColor.RESET + "逃げの初期地点: " + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ() + "\n"; }
-            if (plugin.getOniStartloc() != null) { infoMsg += ChatColor.RESET + "鬼の初期地点: " + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ() + "\n"; }
+            if (plugin.getPrison() != null) {
+                infoMsg += ChatColor.RESET + "監獄座標: " +
+                        ChatColor.AQUA + plugin.getPrison().getX() + " " + plugin.getPrison().getY() + " " +plugin.getPrison().getZ() + "\n";
+            }
+//            if (plugin.getNigeStartloc() != null) { infoMsg += ChatColor.RESET + "逃げの初期地点: " + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ() + "\n"; }
+//            if (plugin.getOniStartloc() != null) { infoMsg += ChatColor.RESET + "鬼の初期地点: " + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ() + "\n"; }
 
             //鬼のプレイヤー名表示
             infoMsg += ChatColor.GOLD + "==========[鬼プレイヤー]==========\n" + ChatColor.RESET;
@@ -154,10 +159,11 @@ public class GameCommand implements CommandExecutor {
             case "nigestartloc":
                 if (args.length == 2) {
                     //コマンド使用者の現在地の座標を取得(intで取得するため)
-                    plugin.setNigeStartloc(sender.getLocation().getBlock().getLocation());
-                    sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "逃げの初期地点を現在座標\n"
-                            + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ() + "\n"
-                            + ChatColor.RESET + "に設定しました");
+                    Location loc = sender.getLocation().getBlock().getLocation();
+                    plugin.getNigeStartloc().add(loc);
+                    sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "逃げの初期地点に現在座標\n"
+                            + ChatColor.AQUA + loc.getX() + " " + loc.getY() + " " + loc.getZ() + "\n"
+                            + ChatColor.RESET + "を追加しました");
                     //infoの更新
                     reloadInfo();
                     return true;
@@ -167,9 +173,10 @@ public class GameCommand implements CommandExecutor {
             case "onistartloc":
                 if (args.length == 2) {
                     //コマンド使用者の現在地の座標を取得(intで取得するため)
-                    plugin.setOniStartloc(sender.getLocation().getBlock().getLocation());
+                    Location loc = sender.getLocation().getBlock().getLocation();
+                    plugin.getOniStartloc().add(loc);
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "鬼の初期地点を現在座標\n"
-                            + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ() + "\n"
+                            + ChatColor.AQUA + loc.getX() + " " + loc.getY() + " " + loc.getZ() + "\n"
                             + ChatColor.RESET + "に設定しました");
                     //infoの更新
                     reloadInfo();
@@ -333,37 +340,46 @@ public class GameCommand implements CommandExecutor {
         obj = plugin.getInfo().registerNewObjective("info", "dummy", ChatColor.GOLD + "=====[どこでも鬼ごっこ]=====");
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 
+        int i = 0;
         Score score = obj.getScore("ゲームモード: " + ChatColor.AQUA + plugin.getMode().toString());
-        score.setScore(7);
+        score.setScore(i--);
         score = obj.getScore("マップ中心地点: " + ChatColor.AQUA + plugin.getCenter().getX() + " " + plugin.getCenter().getZ());
-        score.setScore(6);
+        score.setScore(i--);
         score = obj.getScore("マップ範囲: " + ChatColor.AQUA + plugin.getSize());
-        score.setScore(5);
+        score.setScore(i--);
         score = obj.getScore("ゲーム時間: " + ChatColor.AQUA + plugin.getTime());
-        score.setScore(4);
+        score.setScore(i--);
+        //値がないときは表示せぬものたち
         if (plugin.getPrison() != null) {
             score = obj.getScore("監獄座標: " + ChatColor.AQUA + plugin.getPrison().getX() + " " + plugin.getPrison().getY() + " " +plugin.getPrison().getZ());
-            score.setScore(3);
+            score.setScore(i--);
         }
-        if (plugin.getNigeStartloc() != null) {
-            score = obj.getScore("逃げの初期地点: " + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ());
-            score.setScore(2);
+        if (!plugin.getNigeStartloc().isEmpty()) {
+            score = obj.getScore("逃げの初期地点: ");
+            score.setScore(i--);
+            //逃げ初期地点リスト
+            for (Location l : plugin.getNigeStartloc()) {
+                score = obj.getScore(ChatColor.AQUA + "" + l.getX() + " " + l.getY() + " " + l.getZ());
+                score.setScore(i--);
+            }
         }
-        if (plugin.getOniStartloc() != null) {
-            score = obj.getScore("鬼の初期地点: " + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ());
-            score.setScore(1);
+        if (!plugin.getOniStartloc().isEmpty()) {
+            score = obj.getScore("鬼の初期地点: ");
+            score.setScore(i--);
+            //鬼初期地点リスト
+            for (Location l : plugin.getOniStartloc()) {
+                score = obj.getScore(ChatColor.AQUA + "" + l.getX() + " " + l.getY() + " " + l.getZ());
+                score.setScore(i--);
+            }
         }
 
         //鬼プレイヤー
         score = obj.getScore(ChatColor.GOLD + "=====[鬼プレイヤー]=====");
-        score.setScore(0);
-
+        score.setScore(i--);
         //鬼プレイヤーを登録していくぅ
-        int i = -1;
         for (String n : plugin.getOni()) {
             score = obj.getScore(n);
-            score.setScore(i);
-            i--;
+            score.setScore(i--);
         }
     }
 }
