@@ -33,6 +33,7 @@ public class CommandTabCompleter implements TabCompleter {
                         case "oni":
                             ArrayList<String> names = new ArrayList<>();
                             names.add("clear"); //リスト初期火曜
+                            names.add("random"); //ランダムに選ぶ用
                             for (Player p : Bukkit.getOnlinePlayers()) {
                                 names.add(p.getName());
                             }

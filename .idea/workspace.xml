@@ -7,17 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/CommandTabCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/CommandTabCompleter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +52,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617372080825</updated>
-      <workItem from="1617372084797" duration="4548000" />
+      <workItem from="1617372084797" duration="4905000" />
+      <workItem from="1617687340416" duration="6030000" />
     </task>
     <servers />
   </component>
