@@ -9,9 +9,7 @@
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/map/OnigoLocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617372080825</updated>
       <workItem from="1617372084797" duration="4905000" />
-      <workItem from="1617687340416" duration="14710000" />
+      <workItem from="1617687340416" duration="14797000" />
+      <workItem from="1617763636147" duration="1558000" />
     </task>
     <servers />
   </component>

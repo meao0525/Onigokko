@@ -2,9 +2,7 @@ package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.OnigoItem;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -65,9 +63,14 @@ public class DefaultGameEvent implements Listener {
             return;
         }
         Player player = e.getPlayer();
-        //ジャンプで動けないようにする
+        //上下以外動けないようにする
         if ((player.isGlowing()) && (player.getWalkSpeed() == 0.0)) {
-            if (e.getFrom().getY() < e.getTo().getY()) {
+            int fromX = e.getFrom().getBlock().getX();
+            int fromZ = e.getFrom().getBlock().getZ();
+            int toX = e.getTo().getBlock().getX();
+            int toZ = e.getTo().getBlock().getZ();
+            //X座標かZ座標どちらかが違う
+            if ((fromX != toX) || (fromZ != toZ)) {
                 e.setCancelled(true);
             }
         }
