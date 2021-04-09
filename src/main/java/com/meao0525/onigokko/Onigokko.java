@@ -106,6 +106,8 @@ public final class Onigokko extends JavaPlugin {
             timerBar.addPlayer(p);
             //効果音大事
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_SHOOT, 3.0F, 3.0F);
+            //ゲーム用スコアボードにする
+            p.setScoreboard(board);
         }
         //牢屋座標設定
         if ((mode.equals(Mode.KEIDORO))&&(prison == null)) {
@@ -158,6 +160,8 @@ public final class Onigokko extends JavaPlugin {
             //エフェクト
             p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.3F, 0.5F);
+            //元のスコアボードに戻す
+            p.setScoreboard(manager.getMainScoreboard());
         }
     }
 
