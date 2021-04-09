@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
@@ -101,6 +102,26 @@ public class DefaultGameEvent implements Listener {
                 String oiName = oi.toItemStack().getItemMeta().getDisplayName();
                 if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanTouch())) {
                     //触っちゃいけないオニゴアイテムです
+                    e.setCancelled(true);
+                    return;
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void ThrowItemEventListener(PlayerDropItemEvent e) {
+        if (!plugin.isGaming()) {
+            return;
+        }
+        //捨てたアイテム
+        ItemStack item = e.getItemDrop().getItemStack();
+        if (item.getItemMeta() != null) {
+            for (OnigoItem oi : OnigoItem.values()) {
+                String itemName = item.getItemMeta().getDisplayName();
+                String oiName = oi.toItemStack().getItemMeta().getDisplayName();
+                if (itemName.equalsIgnoreCase(oiName) && !(oi.isCanThrow())) {
+                    //捨てちゃいけないオニゴアイテムです
                     e.setCancelled(true);
                     return;
                 }
