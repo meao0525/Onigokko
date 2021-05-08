@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
       <workItem from="1617687340416" duration="14797000" />
       <workItem from="1617763636147" duration="1944000" />
       <workItem from="1617765626126" duration="206000" />
-      <workItem from="1617930544731" duration="2912000" />
+      <workItem from="1617930544731" duration="3133000" />
     </task>
     <servers />
   </component>
