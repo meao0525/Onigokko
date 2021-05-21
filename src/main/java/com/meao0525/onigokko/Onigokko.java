@@ -25,6 +25,8 @@ public final class Onigokko extends JavaPlugin {
 
     //ゲーム中か?
     private boolean Gaming = false;
+
+    //////ゲームの設定//////
     //ゲームモード
     private Mode mode = Mode.ONIGOKKO;
     //マップ
@@ -40,6 +42,9 @@ public final class Onigokko extends JavaPlugin {
     //足の速さ
     private int nigeSpeed = 0;
     private int oniSpeed = 0;
+    //ブリンク
+    private boolean pearl = false;
+
     //スコアボード
     private ScoreboardManager manager;
     private Scoreboard board; //ゲーム用
@@ -109,6 +114,8 @@ public final class Onigokko extends JavaPlugin {
                 //足の速さを設定
                 setGameWalkSpeed(p, nigeSpeed);
             }
+            //アイテム配布
+            giveOnigoItems(p);
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
             //効果音大事
@@ -230,6 +237,13 @@ public final class Onigokko extends JavaPlugin {
         player.setWalkSpeed(speedList[speed + 1]);
     }
 
+    public void giveOnigoItems(Player player) {
+        if (isPearl()) {
+            //パール
+            player.getInventory().addItem(OnigoItem.ONIGO_PEARL.toItemStack());
+        }
+    }
+
     /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
     public boolean isGaming() {
         return Gaming;
@@ -312,6 +326,14 @@ public final class Onigokko extends JavaPlugin {
 
     public void setOniSpeed(int oniSpeed) {
         this.oniSpeed = oniSpeed;
+    }
+
+    public boolean isPearl() {
+        return pearl;
+    }
+
+    public void setPearl(boolean pearl) {
+        this.pearl = pearl;
     }
 
     //タイマー用内部クラス

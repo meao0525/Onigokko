@@ -9,8 +9,8 @@ public enum OnigoItem {
     ONI_HELMET(Material.DIAMOND_HELMET, "鬼ヘルメット", false, false),
     ONI_CHESTPLATE(Material.DIAMOND_CHESTPLATE, "鬼チェストプレート", false, false),
     ONI_LEGGINGS(Material.DIAMOND_LEGGINGS, "鬼レギンス", false, false),
-    ONI_BOOTS(Material.DIAMOND_BOOTS, "鬼ブーツ", false, false);
-
+    ONI_BOOTS(Material.DIAMOND_BOOTS, "鬼ブーツ", false, false),
+    ONIGO_PEARL(Material.ENDER_PEARL, "ブリンク", false, true);
 
     private Material material;
     private String name;

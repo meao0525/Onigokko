@@ -56,6 +56,7 @@ public class GameCommand implements CommandExecutor {
                         "           prison <xyz> --- ケイドロ用牢屋地点\n" +
                         "/onigo mode <mode> --- 鬼ごっこゲームモードの設定\n" +
                         "/onigo oni <name> --- 鬼の選出\n" +
+                        "/onigo speed <team> <int> --- 足の速さを設定\n" +
                         "/onigo reset --- ゲーム設定のリセット\n" +
                         "/onigo start --- ゲームスタート\n" +
                         "/onigo stop --- ゲームを強制終了");
@@ -405,6 +406,15 @@ public class GameCommand implements CommandExecutor {
                 score.setScore(i--);
             }
         }
+
+        //アイテム
+        score = obj.getScore(ChatColor.GOLD + "=====[ゲームアイテム]=====");
+        score.setScore(i--);
+        if (plugin.isPearl()) {
+            score = obj.getScore("パール");
+            score.setScore(i--);
+        }
+
 
         //鬼プレイヤー
         score = obj.getScore(ChatColor.GOLD + "=====[鬼プレイヤー]=====");
