@@ -5,6 +5,7 @@ import com.meao0525.onigokko.command.GameCommand;
 import com.meao0525.onigokko.event.DefaultGameEvent;
 import com.meao0525.onigokko.event.NigeTouchEvent;
 import com.meao0525.onigokko.event.OniTouchEvent;
+import com.meao0525.onigokko.event.OnigoPearlThrowEvent;
 import com.meao0525.onigokko.game.Mode;
 import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.*;
@@ -207,6 +208,7 @@ public final class Onigokko extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DefaultGameEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
         getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
+        getServer().getPluginManager().registerEvents(new OnigoPearlThrowEvent(this), this);
     }
 
     public void registerTeam(Scoreboard board) {
