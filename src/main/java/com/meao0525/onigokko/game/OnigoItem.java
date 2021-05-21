@@ -42,6 +42,10 @@ public enum OnigoItem {
         return item;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean isCanThrow() {
         return canThrow;
     }

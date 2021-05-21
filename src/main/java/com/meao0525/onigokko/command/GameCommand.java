@@ -2,6 +2,7 @@ package com.meao0525.onigokko.command;
 
 import com.meao0525.onigokko.Onigokko;
 import com.meao0525.onigokko.game.Mode;
+import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -82,6 +83,9 @@ public class GameCommand implements CommandExecutor {
 
             case "speed":
                 return commandSpeed(sender, args);
+
+            case "item":
+                return commandItem(sender, args);
 
             case "reset":
                 plugin.reset();
@@ -336,7 +340,7 @@ public class GameCommand implements CommandExecutor {
 
     public boolean commandSpeed(CommandSender sender, String[] args) {
         //引数違い
-        if (!(args.length == 3)) { return false; }
+        if (args.length != 3) { return false; }
 
         try {
             //整数取り出す
@@ -352,9 +356,34 @@ public class GameCommand implements CommandExecutor {
                 plugin.setOniSpeed(speed);
             } else if (args[1].equalsIgnoreCase("nige")) {
                 plugin.setNigeSpeed(speed);
+            } else {
+                return false;
             }
         } catch (NumberFormatException e) {
             sender.sendMessage(ChatColor.GRAY + "第3引数は整数を入力してください");
+        }
+        //infoの更新
+        reloadInfo();
+        return true;
+    }
+
+    public boolean commandItem(CommandSender sender, String[] args) {
+        //引数違い
+        if (args.length != 2) { return false; }
+
+        OnigoItem item;
+        if (args[1].equalsIgnoreCase("pearl")) {
+            item = OnigoItem.ONIGO_PEARL;
+        } else {
+            return false;
+        }
+        //トグルで切り替え
+        if (plugin.getItemList().contains(item)) {
+            //除去
+            plugin.getItemList().remove(item);
+        } else {
+            //追加
+            plugin.getItemList().add(item);
         }
         //infoの更新
         reloadInfo();
@@ -408,13 +437,14 @@ public class GameCommand implements CommandExecutor {
         }
 
         //アイテム
-        score = obj.getScore(ChatColor.GOLD + "=====[ゲームアイテム]=====");
-        score.setScore(i--);
-        if (plugin.isPearl()) {
-            score = obj.getScore("パール");
+        if (!plugin.getItemList().isEmpty()) {
+            score = obj.getScore(ChatColor.GOLD + "=====[ゲームアイテム]=====");
             score.setScore(i--);
+            for (OnigoItem oi : plugin.getItemList()) {
+                score = obj.getScore(oi.getName());
+                score.setScore(i--);
+            }
         }
-
 
         //鬼プレイヤー
         score = obj.getScore(ChatColor.GOLD + "=====[鬼プレイヤー]=====");

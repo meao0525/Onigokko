@@ -20,6 +20,8 @@ import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class Onigokko extends JavaPlugin {
 
@@ -42,8 +44,8 @@ public final class Onigokko extends JavaPlugin {
     //足の速さ
     private int nigeSpeed = 0;
     private int oniSpeed = 0;
-    //ブリンク
-    private boolean pearl = false;
+    //アイテム
+    private ArrayList<OnigoItem> itemList = new ArrayList<>();
 
     //スコアボード
     private ScoreboardManager manager;
@@ -238,9 +240,9 @@ public final class Onigokko extends JavaPlugin {
     }
 
     public void giveOnigoItems(Player player) {
-        if (isPearl()) {
-            //パール
-            player.getInventory().addItem(OnigoItem.ONIGO_PEARL.toItemStack());
+        //itemListのアイテムたちを放り込む
+        for (OnigoItem oi : itemList) {
+            player.getInventory().addItem(oi.toItemStack());
         }
     }
 
@@ -328,12 +330,8 @@ public final class Onigokko extends JavaPlugin {
         this.oniSpeed = oniSpeed;
     }
 
-    public boolean isPearl() {
-        return pearl;
-    }
-
-    public void setPearl(boolean pearl) {
-        this.pearl = pearl;
+    public ArrayList<OnigoItem> getItemList() {
+        return itemList;
     }
 
     //タイマー用内部クラス
