@@ -93,6 +93,7 @@ public class GameCommand implements CommandExecutor {
                 } else if (plugin.getOni().isEmpty()) {
                     sender.sendMessage(ChatColor.GRAY + "おいおい、鬼がいねーぞ");
                 } else {
+                    flagInfo = false;
                     //スタート処理
                     plugin.start();
                 }
@@ -132,14 +133,14 @@ public class GameCommand implements CommandExecutor {
                     + ChatColor.RESET + "ゲームモード: " + ChatColor.AQUA + plugin.getMode().toString() + "\n"
                     + ChatColor.RESET + "マップ中心地点: " + ChatColor.AQUA + plugin.getCenter().getX() + " " + plugin.getCenter().getZ() + "\n"
                     + ChatColor.RESET + "マップ範囲: " + ChatColor.AQUA + plugin.getSize() + "\n"
-                    + ChatColor.RESET + "ゲーム時間: " + ChatColor.AQUA + plugin.getTime() + "\n" + ChatColor.RESET;
+                    + ChatColor.RESET + "ゲーム時間: " + ChatColor.AQUA + plugin.getTime() + "\n"
+                    + ChatColor.RESET + "足の速さ: " + "鬼 " + ChatColor.AQUA + plugin.getOniSpeed()
+                    + ChatColor.RESET + " : 逃 " + ChatColor.AQUA + plugin.getNigeSpeed() + "\n"+ ChatColor.RESET;
             //未設定のときは表示しない
             if (plugin.getPrison() != null) {
                 infoMsg += ChatColor.RESET + "監獄座標: " +
                         ChatColor.AQUA + plugin.getPrison().getX() + " " + plugin.getPrison().getY() + " " +plugin.getPrison().getZ() + "\n";
             }
-//            if (plugin.getNigeStartloc() != null) { infoMsg += ChatColor.RESET + "逃げの初期地点: " + ChatColor.AQUA + plugin.getNigeStartloc().getX() + " " + plugin.getNigeStartloc().getY() + " " + plugin.getNigeStartloc().getZ() + "\n"; }
-//            if (plugin.getOniStartloc() != null) { infoMsg += ChatColor.RESET + "鬼の初期地点: " + ChatColor.AQUA + plugin.getOniStartloc().getX() + " " + plugin.getOniStartloc().getY() + " " + plugin.getOniStartloc().getZ() + "\n"; }
 
             //鬼のプレイヤー名表示
             infoMsg += ChatColor.GOLD + "==========[鬼プレイヤー]==========\n" + ChatColor.RESET;
@@ -348,6 +349,8 @@ public class GameCommand implements CommandExecutor {
         score = obj.getScore("マップ範囲: " + ChatColor.AQUA + plugin.getSize());
         score.setScore(i--);
         score = obj.getScore("ゲーム時間: " + ChatColor.AQUA + plugin.getTime());
+        score.setScore(i--);
+        score = obj.getScore("足の速さ: " + "鬼 " + ChatColor.AQUA + plugin.getOniSpeed() + ChatColor.RESET + " : 逃 " + ChatColor.AQUA + plugin.getNigeSpeed());
         score.setScore(i--);
         //値がないときは表示せぬものたち
         if (plugin.getPrison() != null) {

@@ -224,20 +224,10 @@ public final class Onigokko extends JavaPlugin {
     }
 
     public void setGameWalkSpeed(Player player, int speed) {
-        float s = 0.2F;
-        if(speed == -1) {
-            s = 0.1F;
-        } else if(speed == 0) {
-            s = 0.2F;
-        } else if(speed == 2) {
-            s = 0.3F;
-        } else if(speed == 3) {
-            s = 0.4F;
-        } else if(speed == 4) {
-            s = 0.5F;
-        }
-        //足の速さ設定
-        player.setWalkSpeed(s);
+        //速さは5段階
+        float[] speedList = {0.1F, 0.2F, 0.3F, 0.4F, 0.5F};
+        //speedには-1～3の値が入っている
+        player.setWalkSpeed(speedList[speed + 1]);
     }
 
     /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
