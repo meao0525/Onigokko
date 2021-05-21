@@ -171,6 +171,8 @@ public final class Onigokko extends JavaPlugin {
                 //発行消す
                 p.setGlowing(false);
             }
+            //オニゴアイテム消す
+            removeOnigoItems(p);
             //足の速さ戻す
             p.setWalkSpeed(0.2F);
             //エフェクト
@@ -243,6 +245,13 @@ public final class Onigokko extends JavaPlugin {
         //itemListのアイテムたちを放り込む
         for (OnigoItem oi : itemList) {
             player.getInventory().addItem(oi.toItemStack());
+        }
+    }
+
+    public void removeOnigoItems(Player player) {
+        //itemListのアイテムたちを消す(valuesじゃなくてもいいよね)
+        for (OnigoItem oi : itemList) {
+            player.getInventory().remove(oi.toItemStack());
         }
     }
 

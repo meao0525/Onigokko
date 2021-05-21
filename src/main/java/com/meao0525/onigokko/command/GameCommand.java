@@ -58,6 +58,7 @@ public class GameCommand implements CommandExecutor {
                         "/onigo mode <mode> --- 鬼ごっこゲームモードの設定\n" +
                         "/onigo oni <name> --- 鬼の選出\n" +
                         "/onigo speed <team> <int> --- 足の速さを設定\n" +
+                        "/onigo item <item> --- ゲームアイテムの設定" +
                         "/onigo reset --- ゲーム設定のリセット\n" +
                         "/onigo start --- ゲームスタート\n" +
                         "/onigo stop --- ゲームを強制終了");
