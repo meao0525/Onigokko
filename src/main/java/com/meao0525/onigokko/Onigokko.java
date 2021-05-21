@@ -37,6 +37,9 @@ public final class Onigokko extends JavaPlugin {
     private int time = 300;
     //鬼リスト
     private ArrayList<String> oni = new ArrayList<>();
+    //足の速さ
+    private int nigeSpeed = 0;
+    private int oniSpeed = 0;
     //スコアボード
     private ScoreboardManager manager;
     private Scoreboard board; //ゲーム用
@@ -97,10 +100,14 @@ public final class Onigokko extends JavaPlugin {
                 makeOni(p);
                 //ランダムな初期地点に移動
                 p.teleport(getRandomStartLoc(oniStartloc));
+                //足の速さを設定
+                setGameWalkSpeed(p, oniSpeed);
             } else {
                 makeNige(p);
                 //ランダムな初期地点に移動
                 p.teleport(getRandomStartLoc(nigeStartloc));
+                //足の速さを設定
+                setGameWalkSpeed(p, nigeSpeed);
             }
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
@@ -152,11 +159,11 @@ public final class Onigokko extends JavaPlugin {
                 if (p.getWalkSpeed() != 0.0 && !p.isGlowing()) {
                     Bukkit.broadcastMessage(ChatColor.AQUA + p.getName());
                 }
-                //足の速さ戻す
-                p.setWalkSpeed(0.2F);
                 //発行消す
                 p.setGlowing(false);
             }
+            //足の速さ戻す
+            p.setWalkSpeed(0.2F);
             //エフェクト
             p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.3F, 0.5F);
@@ -173,7 +180,6 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setChestplate(OnigoItem.ONI_CHESTPLATE.toItemStack());
         player.getInventory().setLeggings(OnigoItem.ONI_LEGGINGS.toItemStack());
         player.getInventory().setBoots(OnigoItem.ONI_BOOTS.toItemStack());
-        //鬼用スコアボードに変える
     }
 
     public void makeNige(Player player) {
@@ -184,7 +190,6 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setChestplate(new ItemStack(Material.AIR));
         player.getInventory().setLeggings(new ItemStack(Material.AIR));
         player.getInventory().setBoots(new ItemStack(Material.AIR));
-        //逃げ用スコアボードに変える
     }
 
     public void registerEvent() {
@@ -216,6 +221,23 @@ public final class Onigokko extends JavaPlugin {
         Collections.shuffle(list);
         //始めの値を返す
         return list.get(0);
+    }
+
+    public void setGameWalkSpeed(Player player, int speed) {
+        float s = 0.2F;
+        if(speed == -1) {
+            s = 0.1F;
+        } else if(speed == 0) {
+            s = 0.2F;
+        } else if(speed == 2) {
+            s = 0.3F;
+        } else if(speed == 3) {
+            s = 0.4F;
+        } else if(speed == 4) {
+            s = 0.5F;
+        }
+        //足の速さ設定
+        player.setWalkSpeed(s);
     }
 
     /* ↓↓↓ゲッターセッターヤッター↓↓↓ */
@@ -284,6 +306,22 @@ public final class Onigokko extends JavaPlugin {
 
     public Scoreboard getInfo() {
         return info;
+    }
+
+    public int getNigeSpeed() {
+        return nigeSpeed;
+    }
+
+    public void setNigeSpeed(int nigeSpeed) {
+        this.nigeSpeed = nigeSpeed;
+    }
+
+    public int getOniSpeed() {
+        return oniSpeed;
+    }
+
+    public void setOniSpeed(int oniSpeed) {
+        this.oniSpeed = oniSpeed;
     }
 
     //タイマー用内部クラス
