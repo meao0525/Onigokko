@@ -79,6 +79,9 @@ public class GameCommand implements CommandExecutor {
             case "oni":
                 return commandOni(sender, args);
 
+            case "speed":
+                return commandSpeed(sender, args);
+
             case "reset":
                 plugin.reset();
                 reloadInfo();
@@ -327,6 +330,33 @@ public class GameCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET
                     + args[1] + ChatColor.GRAY + " というプレイヤーが見つかりません");
         }
+        return true;
+    }
+
+    public boolean commandSpeed(CommandSender sender, String[] args) {
+        //引数違い
+        if (!(args.length == 3)) { return false; }
+
+        try {
+            //整数取り出す
+            int speed = Integer.parseInt(args[2]);
+            //でかすぎor小さすぎ
+            if (speed < -1) {
+                speed = -1;
+            } else if ( speed > 3) {
+                speed = 3;
+            }
+            //速さ設定
+            if (args[1].equalsIgnoreCase("oni")) {
+                plugin.setOniSpeed(speed);
+            } else if (args[1].equalsIgnoreCase("nige")) {
+                plugin.setNigeSpeed(speed);
+            }
+        } catch (NumberFormatException e) {
+            sender.sendMessage(ChatColor.GRAY + "第3引数は整数を入力してください");
+        }
+        //infoの更新
+        reloadInfo();
         return true;
     }
 
