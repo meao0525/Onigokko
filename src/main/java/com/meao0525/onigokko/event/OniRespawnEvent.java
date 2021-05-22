@@ -25,12 +25,12 @@ public class OniRespawnEvent implements Listener {
         if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
             //ゲーム中か
             if (!plugin.isGaming()) { return; }
-            //リスポーン？
-            ItemStack item = e.getItem();
-            if ((item == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("リスポーン"))) { return; }
             //アドベンチャーモードか
             Player player = e.getPlayer();
             if (!player.getGameMode().equals(GameMode.ADVENTURE)) { return; }
+            //リスポーン？
+            ItemStack item = player.getInventory().getItemInMainHand();
+            if ((item == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("リスポーン"))) { return; }
             //リスポーンさせる
             player.teleport(plugin.getRandomStartLoc(plugin.getOniStartloc()));
         }

@@ -2,10 +2,7 @@ package com.meao0525.onigokko;
 
 import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
-import com.meao0525.onigokko.event.DefaultGameEvent;
-import com.meao0525.onigokko.event.NigeTouchEvent;
-import com.meao0525.onigokko.event.OniTouchEvent;
-import com.meao0525.onigokko.event.OnigoPearlThrowEvent;
+import com.meao0525.onigokko.event.*;
 import com.meao0525.onigokko.game.Mode;
 import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.*;
@@ -211,6 +208,7 @@ public final class Onigokko extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
         getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
         getServer().getPluginManager().registerEvents(new OnigoPearlThrowEvent(this), this);
+        getServer().getPluginManager().registerEvents(new OniRespawnEvent(this), this);
     }
 
     public void registerTeam(Scoreboard board) {
@@ -254,7 +252,7 @@ public final class Onigokko extends JavaPlugin {
 
     public void removeOnigoItems(Player player) {
         //itemListのアイテムたちを消す(valuesじゃなくてもいいよね)
-        for (OnigoItem oi : itemList) {
+        for (OnigoItem oi : OnigoItem.values()) {
             player.getInventory().remove(oi.toItemStack());
         }
     }
