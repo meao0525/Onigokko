@@ -201,6 +201,8 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setChestplate(new ItemStack(Material.AIR));
         player.getInventory().setLeggings(new ItemStack(Material.AIR));
         player.getInventory().setBoots(new ItemStack(Material.AIR));
+        //リスポーンアイテム消す
+        player.getInventory().remove(OnigoItem.ONI_RESPAWN.toItemStack());
     }
 
     public void registerEvent() {

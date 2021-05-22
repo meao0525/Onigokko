@@ -43,7 +43,7 @@ public class NigeTouchEvent implements Listener {
                         + ChatColor.RESET + damager.getDisplayName() + " が "
                         + ChatColor.RESET + target.getDisplayName() + " を開放しました");
                 //元に戻す
-                target.setWalkSpeed(plugin.getNigeSpeed());
+                plugin.setGameWalkSpeed(target, plugin.getNigeSpeed());
                 target.setGlowing(false);
                 //エフェクト
                 target.sendTitle("", ChatColor.AQUA + "解放！", 0, 40, 20);

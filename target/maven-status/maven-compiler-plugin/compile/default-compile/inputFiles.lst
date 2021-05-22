@@ -1,9 +1,11 @@
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\map\Map.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\command\GameCommand.java
+C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\event\OnigoPearlThrowEvent.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\event\OniTouchEvent.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\Onigokko.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\game\Mode.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\event\NigeTouchEvent.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\command\CommandTabCompleter.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\game\OnigoItem.java
+C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\event\OniRespawnEvent.java
 C:\Users\Masahisa\IdeaProjects\Onigokko\src\main\java\com\meao0525\onigokko\event\DefaultGameEvent.java
