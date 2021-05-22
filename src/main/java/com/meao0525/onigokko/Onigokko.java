@@ -192,6 +192,8 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setChestplate(OnigoItem.ONI_CHESTPLATE.toItemStack());
         player.getInventory().setLeggings(OnigoItem.ONI_LEGGINGS.toItemStack());
         player.getInventory().setBoots(OnigoItem.ONI_BOOTS.toItemStack());
+        //リスポーンアイテム
+        player.getInventory().addItem(OnigoItem.ONI_RESPAWN.toItemStack());
     }
 
     public void makeNige(Player player) {
