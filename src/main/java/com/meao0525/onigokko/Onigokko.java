@@ -173,6 +173,8 @@ public final class Onigokko extends JavaPlugin {
             removeOnigoItems(p);
             //足の速さ戻す
             p.setWalkSpeed(0.2F);
+            //プレイヤーリストの色戻す
+            p.setPlayerListName(ChatColor.RESET + p.getName());
             //エフェクト
             p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.3F, 0.5F);
@@ -191,6 +193,8 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setBoots(OnigoItem.ONI_BOOTS.toItemStack());
         //リスポーンアイテム
         player.getInventory().addItem(OnigoItem.ONI_RESPAWN.toItemStack());
+        //プレイヤーリストの色
+        player.setPlayerListName(oniTeam.getColor() + player.getName());
     }
 
     public void makeNige(Player player) {
@@ -203,6 +207,8 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setBoots(new ItemStack(Material.AIR));
         //リスポーンアイテム消す
         player.getInventory().remove(OnigoItem.ONI_RESPAWN.toItemStack());
+        //プレイヤーリストの色
+        player.setPlayerListName(nigeTeam.getColor() + player.getName());
     }
 
     public void registerEvent() {

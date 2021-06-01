@@ -61,8 +61,7 @@ public class OniTouchEvent implements Listener {
                     //テレポート
                     target.teleport(plugin.getPrison());
                     //動けなくする
-                    target.setWalkSpeed(0.0F);
-                    target.setGlowing(true);
+                    bind(target);
                     break;
 
                 case FUEONI:
@@ -76,8 +75,7 @@ public class OniTouchEvent implements Listener {
 
                 case KOORIONI:
                     //動けなくする
-                    target.setWalkSpeed(0.0F);
-                    target.setGlowing(true);
+                    bind(target);
                     break;
             }
             if (checkEnd()) {
@@ -89,6 +87,15 @@ public class OniTouchEvent implements Listener {
             target.sendTitle("", ChatColor.RED + "確保された...", 0, 40, 20);
             target.getWorld().playSound(target.getLocation(), Sound.BLOCK_ANVIL_PLACE, 0.3F, 0.1F);
         }
+    }
+
+    public void bind(Player player) {
+        //足の速さ
+        player.setWalkSpeed(0.0F);
+        //発光
+        player.setGlowing(true);
+        //プレイヤーリストをグレーにする
+        player.setPlayerListName(ChatColor.GRAY + player.getName());
     }
 
     public boolean checkEnd() {

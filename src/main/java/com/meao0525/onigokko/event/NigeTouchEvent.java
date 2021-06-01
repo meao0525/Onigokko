@@ -41,10 +41,11 @@ public class NigeTouchEvent implements Listener {
             if ((target.isGlowing()) && (target.getWalkSpeed() == 0.0)) {
                 Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
                         + ChatColor.RESET + damager.getDisplayName() + " が "
-                        + ChatColor.RESET + target.getDisplayName() + " を開放しました");
+                        + ChatColor.RESET + target.getDisplayName() + " を解放しました");
                 //元に戻す
                 plugin.setGameWalkSpeed(target, plugin.getNigeSpeed());
                 target.setGlowing(false);
+                target.setPlayerListName(plugin.getNigeTeam().getColor() + target.getName());
                 //エフェクト
                 target.sendTitle("", ChatColor.AQUA + "解放！", 0, 40, 20);
                 target.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 0.3F, 0.2F);

@@ -2,10 +2,12 @@ com\meao0525\onigokko\command\CommandTabCompleter.class
 com\meao0525\onigokko\event\NigeTouchEvent.class
 com\meao0525\onigokko\event\OniRespawnEvent.class
 com\meao0525\onigokko\map\Map.class
+com\meao0525\onigokko\event\OnigoPearlThrowEvent$TeleportThread$1.class
 com\meao0525\onigokko\event\OnigoPearlThrowEvent.class
 com\meao0525\onigokko\game\Mode.class
 com\meao0525\onigokko\Onigokko.class
 com\meao0525\onigokko\event\DefaultGameEvent.class
+com\meao0525\onigokko\event\OnigoPearlThrowEvent$TeleportThread.class
 com\meao0525\onigokko\Onigokko$GameTimer.class
 com\meao0525\onigokko\event\OniTouchEvent.class
 com\meao0525\onigokko\command\GameCommand.class

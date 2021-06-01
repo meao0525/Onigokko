@@ -10,18 +10,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoPearlThrowEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoPearlThrowEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.0-SNAPSHOT-shaded.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.1-Base.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniRespawnEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniRespawnEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.2-Item.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.1-Base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.2-Item.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +84,8 @@
       <workItem from="1621656587079" duration="5527000" />
       <workItem from="1621668571564" duration="693000" />
       <workItem from="1621682958983" duration="480000" />
-      <workItem from="1621693415647" duration="2735000" />
+      <workItem from="1621693415647" duration="2816000" />
+      <workItem from="1622549087654" duration="5156000" />
     </task>
     <servers />
   </component>
@@ -107,21 +101,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="379" width="435" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1617695853199" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1621683443696">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1621696247082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621683443696" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1621683443696">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621696247082" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1621696247081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621683443696" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1621683443696">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621696247081" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1621696247081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621683443696" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1621683443696">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621696247081" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1621696247082">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621683443696" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1621696247082" />
   </component>
 </project>
