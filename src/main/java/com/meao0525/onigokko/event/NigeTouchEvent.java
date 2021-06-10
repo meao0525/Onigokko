@@ -26,7 +26,6 @@ public class NigeTouchEvent implements Listener {
         }
         //ゲーム中か
         if (!plugin.isGaming()) {
-            e.setCancelled(true);
             return;
         }
 

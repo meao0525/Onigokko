@@ -160,6 +160,8 @@ public final class Onigokko extends JavaPlugin {
                 p.getInventory().setChestplate(new ItemStack(Material.AIR));
                 p.getInventory().setLeggings(new ItemStack(Material.AIR));
                 p.getInventory().setBoots(new ItemStack(Material.AIR));
+                //リスポーンアイテム消す
+                p.getInventory().remove(OnigoItem.ONI_RESPAWN.toItemStack());
             } else {
                 nigeTeam.removeEntry(p.getName());
                 //捕まってなかった人は発表
@@ -260,7 +262,7 @@ public final class Onigokko extends JavaPlugin {
 
     public void removeOnigoItems(Player player) {
         //itemListのアイテムたちを消す(valuesじゃなくてもいいよね)
-        for (OnigoItem oi : OnigoItem.values()) {
+        for (OnigoItem oi : itemList) {
             player.getInventory().remove(oi.toItemStack());
         }
     }
