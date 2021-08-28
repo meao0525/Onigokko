@@ -6,7 +6,7 @@
 
     <groupId>com.meao0525</groupId>
     <artifactId>Onigokko</artifactId>
-    <version>1.2.1-Item</version>
+    <version>1.2.2-Item</version>
     <packaging>jar</packaging>
 
     <name>Onigokko</name>
