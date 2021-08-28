@@ -13,6 +13,7 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.*;
 
@@ -115,8 +116,6 @@ public final class Onigokko extends JavaPlugin {
                 //足の速さを設定
                 setGameWalkSpeed(p, nigeSpeed);
             }
-            //アイテム配布
-            giveOnigoItems(p);
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
             //効果音大事
@@ -196,8 +195,12 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setBoots(OnigoItem.ONI_BOOTS.toItemStack());
         //リスポーンアイテム
         player.getInventory().addItem(OnigoItem.ONI_RESPAWN.toItemStack());
+        //オニゴアイテム渡す
+        giveOnigoItems(player);
         //プレイヤーリストの色
         player.setPlayerListName(oniTeam.getColor() + player.getName());
+        //発光消す
+        player.removePotionEffect(PotionEffectType.GLOWING);
     }
 
     public void makeNige(Player player) {
@@ -210,6 +213,8 @@ public final class Onigokko extends JavaPlugin {
         player.getInventory().setBoots(new ItemStack(Material.AIR));
         //リスポーンアイテム消す
         player.getInventory().remove(OnigoItem.ONI_RESPAWN.toItemStack());
+        //オニゴアイテム渡す
+        giveOnigoItems(player);
         //プレイヤーリストの色
         player.setPlayerListName(nigeTeam.getColor() + player.getName());
     }
@@ -258,7 +263,16 @@ public final class Onigokko extends JavaPlugin {
     public void giveOnigoItems(Player player) {
         //itemListのアイテムたちを放り込む
         for (OnigoItem oi : itemList) {
-            player.getInventory().addItem(oi.toItemStack());
+            //それぞれのチームが持つべきアイテムか？
+            if ((oi.isNige() && nigeTeam.hasEntry(player.getName()))
+                || (oi.isOni() && oniTeam.hasEntry(player.getName()))) {
+                //一回消してから渡す
+                player.getInventory().remove(oi.toItemStack());
+                player.getInventory().addItem(oi.toItemStack());
+            } else {
+                //そうじゃないときは消す
+                player.getInventory().remove(oi.toItemStack());
+            }
         }
     }
 

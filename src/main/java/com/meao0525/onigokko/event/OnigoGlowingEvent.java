@@ -33,6 +33,8 @@ public class OnigoGlowingEvent implements Listener {
             if ((item == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("発光"))) { return; }
             //元のイベント消す
             e.setCancelled(true);
+            //クールダウン中？
+            if (player.hasCooldown(item.getType())) { return; }
             //発光エフェクト30秒
             PotionEffect glowing = new PotionEffect(PotionEffectType.GLOWING, 200, 1, false);
             //全員光れ！
