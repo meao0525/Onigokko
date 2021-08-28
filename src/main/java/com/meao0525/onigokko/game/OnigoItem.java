@@ -11,7 +11,8 @@ public enum OnigoItem {
     ONI_LEGGINGS(Material.DIAMOND_LEGGINGS, "鬼レギンス", false, false),
     ONI_BOOTS(Material.DIAMOND_BOOTS, "鬼ブーツ", false, false),
     ONI_RESPAWN(Material.EMERALD, "リスポーン", false, true),
-    ONIGO_PEARL(Material.ENDER_PEARL, "ブリンク", false, true);
+    ONIGO_PEARL(Material.ENDER_PEARL, "ブリンク", false, true),
+    ONIGO_GLOWING(Material.ENDER_EYE, "発光", false, true);
 
     private Material material;
     private String name;

@@ -26,7 +26,7 @@ public final class Onigokko extends JavaPlugin {
     //ゲーム中か?
     private boolean Gaming = false;
 
-    //////ゲームの設定//////
+    /*---ゲームの設定---*/
     //ゲームモード
     private Mode mode = Mode.ONIGOKKO;
     //マップ
@@ -44,6 +44,7 @@ public final class Onigokko extends JavaPlugin {
     private int oniSpeed = 0;
     //アイテム
     private ArrayList<OnigoItem> itemList = new ArrayList<>();
+    /*------------------*/
 
     //スコアボード
     private ScoreboardManager manager;
@@ -219,6 +220,7 @@ public final class Onigokko extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
         getServer().getPluginManager().registerEvents(new OnigoPearlThrowEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniRespawnEvent(this), this);
+        getServer().getPluginManager().registerEvents(new OnigoGlowingEvent(this), this);
     }
 
     public void registerTeam(Scoreboard board) {

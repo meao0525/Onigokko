@@ -41,7 +41,7 @@ public class CommandTabCompleter implements TabCompleter {
                         case "speed":
                             return Arrays.asList("oni", "nige");
                         case "item":
-                            return Arrays.asList("pearl");
+                            return Arrays.asList("pearl", "glowing");
                     }
                 }
             }

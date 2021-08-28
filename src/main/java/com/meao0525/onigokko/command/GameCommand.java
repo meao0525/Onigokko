@@ -375,6 +375,8 @@ public class GameCommand implements CommandExecutor {
         OnigoItem item;
         if (args[1].equalsIgnoreCase("pearl")) {
             item = OnigoItem.ONIGO_PEARL;
+        } else if(args[1].equalsIgnoreCase("glowing")) {
+            item = OnigoItem.ONIGO_GLOWING;
         } else {
             return false;
         }
