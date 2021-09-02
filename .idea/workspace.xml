@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/game/OnigoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/game/OnigoItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.1-Item.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.2.2-Item.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.1-Item.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.2.2-Item.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <workItem from="1627543825760" duration="34000" />
       <workItem from="1630138753092" duration="3719000" />
       <workItem from="1630142764968" duration="12000" />
-      <workItem from="1630142797984" duration="3189000" />
+      <workItem from="1630142797984" duration="3288000" />
     </task>
     <servers />
   </component>
@@ -107,21 +102,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630145719006" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1630142501330">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1630146112804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630142501330" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1630142501329">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630146112804" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1630146112804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630142501329" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1630142501329">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630146112804" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1630146112804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630142501329" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1630142501330">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630146112804" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1630146112804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630142501330" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630146112804" />
   </component>
 </project>
