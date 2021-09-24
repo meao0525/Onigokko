@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.2.2-Item.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.2-Item.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.2.2-Item.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +86,8 @@
       <workItem from="1630138753092" duration="3719000" />
       <workItem from="1630142764968" duration="12000" />
       <workItem from="1630142797984" duration="3288000" />
+      <workItem from="1632406081014" duration="170000" />
+      <workItem from="1632461657061" duration="3448000" />
     </task>
     <servers />
   </component>
