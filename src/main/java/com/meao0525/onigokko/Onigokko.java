@@ -110,6 +110,10 @@ public final class Onigokko extends JavaPlugin {
                 //足の速さを設定
                 setGameWalkSpeed(p, oniSpeed);
             } else {
+                //残りのアドベンチャーの人を逃げチームにする
+                if (p.getGameMode() != GameMode.ADVENTURE) {
+                    continue;
+                }
                 makeNige(p);
                 //ランダムな初期地点に移動
                 p.teleport(getRandomStartLoc(nigeStartloc));
@@ -146,6 +150,11 @@ public final class Onigokko extends JavaPlugin {
         Bukkit.broadcastMessage(ChatColor.GOLD + "----------[どこでも鬼ごっこ]----------\n"
                 + ChatColor.RESET + "↓↓ 最後まで逃げのびた人 ↓↓");
         for (Player p : Bukkit.getOnlinePlayers()) {
+            //無所属は無視
+            if (!oniTeam.hasEntry(p.getName()) && !nigeTeam.hasEntry(p.getName())) {
+                continue;
+            }
+
             //リスポーンを元に戻す
             p.setBedSpawnLocation(center, true);
             //全員中央に

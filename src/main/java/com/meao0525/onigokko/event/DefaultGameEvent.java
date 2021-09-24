@@ -9,10 +9,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scoreboard.Team;
+
+import java.util.ArrayList;
 
 public class DefaultGameEvent implements Listener {
 
@@ -29,13 +32,19 @@ public class DefaultGameEvent implements Listener {
         Team oniTeam = plugin.getOniTeam();
         if (plugin.isGaming()) {
             //ゲーム中
-            if (!nigeTeam.hasEntry(player.getName())
-                    && !oniTeam.hasEntry(player.getName())) {
-                //両方のチームに所属してないなら逃げチームに入れる
-                plugin.makeNige(player);
+            if (player.getGameMode().equals(GameMode.ADVENTURE)) {
+                if (!nigeTeam.hasEntry(player.getName())
+                        && !oniTeam.hasEntry(player.getName())) {
+                    //両方のチームに所属してないなら逃げチームに入れる
+                    plugin.makeNige(player);
+                    //ランダムな初期地点に移動
+                    player.teleport(plugin.getRandomStartLoc(plugin.getNigeStartloc()));
+                    //足の速さを設定
+                    plugin.setGameWalkSpeed(player, plugin.getNigeSpeed());
+                }
+                //タイマー用ボスバー
+                plugin.getTimerBar().addPlayer(player);
             }
-            //タイマー用ボスバー
-             plugin.getTimerBar().addPlayer(player);
 
         } else {
             //ゲーム中じゃない

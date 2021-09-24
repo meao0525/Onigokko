@@ -5,6 +5,7 @@ import com.meao0525.onigokko.game.Mode;
 import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -340,9 +341,9 @@ public class GameCommand implements CommandExecutor {
             List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
             //シャッフル
             Collections.shuffle(players);
-            //すでに鬼じゃなきゃやらせる
+            //すでに鬼じゃないアドべの人
             for (Player p : players) {
-                if (!plugin.getOni().contains(p.getName())) {
+                if (!plugin.getOni().contains(p.getName()) && p.getGameMode().equals(GameMode.ADVENTURE)) {
                     plugin.getOni().add(p.getName());
                     sender.sendMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.AQUA
                             + p.getName() + ChatColor.RESET + " を鬼に追加しました");
