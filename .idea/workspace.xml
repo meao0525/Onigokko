@@ -5,22 +5,26 @@
       <artifact name="Onigokko:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="">
+    <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.3-Item.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.4-Adventure.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/command/GameCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/DefaultGameEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/DefaultGameEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/game/OnigoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/game/OnigoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/NigeTouchEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/NigeTouchEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniTouchEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniTouchEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.3-Item.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.4-Adventure.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,24 +41,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1qcHhxiLGA9no8yh8XGJi3FZryU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -68,6 +67,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -108,31 +108,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1630144535089">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630144535089" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1630145719006">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1630145719006" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1632498540812">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1632498540812" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1632498540812">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1632498540812" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1632498540812">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1632498540812" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1632498540812">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.306.1366.728@0.0.1920.1040" timestamp="1632498540812" />
   </component>
 </project>

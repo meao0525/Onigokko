@@ -100,6 +100,8 @@ public final class Onigokko extends JavaPlugin {
     public void start() {
         //ゲームスタート
         Gaming = true;
+        Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]"
+                + ChatColor.AQUA + mode.toString() + ChatColor.RESET + " を始めます");
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (oni.contains(p.getName())) {
@@ -122,7 +124,8 @@ public final class Onigokko extends JavaPlugin {
             }
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
-            //効果音大事
+            //合図は大事
+            p.sendTitle("", ChatColor.GOLD + "--- start! ---", 10, 70, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_SHOOT, 3.0F, 3.0F);
             //ゲーム用スコアボードにする
             p.setScoreboard(board);
@@ -243,13 +246,13 @@ public final class Onigokko extends JavaPlugin {
         oniTeam = board.getTeam("oniteam");
         if (nigeTeam == null) {
             nigeTeam = board.registerNewTeam("nigeteam");
-            nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            nigeTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
             nigeTeam.setAllowFriendlyFire(true);
             nigeTeam.setColor(ChatColor.BLUE);
         }
         if (oniTeam == null) {
             oniTeam = board.registerNewTeam("oniteam");
-            oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.FOR_OTHER_TEAMS);
+            oniTeam.setOption(Team.Option.NAME_TAG_VISIBILITY, Team.OptionStatus.NEVER);
             oniTeam.setAllowFriendlyFire(false);
             oniTeam.setColor(ChatColor.RED);
         }

@@ -35,9 +35,9 @@ public class NigeTouchEvent implements Listener {
         if (!(plugin.getOni().contains(damager.getName())) && !(plugin.getOni().contains(target.getName()))) {
             e.setCancelled(true);
             //お前も捕まってるやないかい
-            if (damager.isGlowing() && damager.getWalkSpeed() == 0.0) { return; }
+            if (isCaught(damager)) { return; }
             //捕まってる人を殴った
-            if ((target.isGlowing()) && (target.getWalkSpeed() == 0.0)) {
+            if (isCaught(target)) {
                 Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ] "
                         + ChatColor.RESET + damager.getDisplayName() + " が "
                         + ChatColor.RESET + target.getDisplayName() + " を解放しました");
@@ -54,5 +54,14 @@ public class NigeTouchEvent implements Listener {
             //殴った方が逃げ、殴られた方が鬼
             e.setCancelled(true);
         }
+    }
+
+    public boolean isCaught(Player player) {
+        //発光＋名前がグレーなら捕まっている
+        if (player.isGlowing()
+                && player.getPlayerListName().equalsIgnoreCase(ChatColor.GRAY + player.getName())) {
+            return true;
+        }
+        return false;
     }
 }

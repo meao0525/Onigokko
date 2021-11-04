@@ -59,8 +59,10 @@ public class OniTouchEvent implements Listener {
                 case KEIDORO:
                     //テレポート
                     target.teleport(plugin.getPrison());
-                    //動けなくする
-                    bind(target);
+                    //発光
+                    target.setGlowing(true);
+                    //プレイヤーリストをグレーにする
+                    target.setPlayerListName(ChatColor.GRAY + target.getName());
                     break;
 
                 case FUEONI:
