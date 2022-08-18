@@ -1,7 +1,6 @@
 package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
-import com.meao0525.onigokko.game.OnigoItem;
 import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -10,7 +9,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class OniRespawnEvent implements Listener {
 
@@ -33,7 +31,7 @@ public class OniRespawnEvent implements Listener {
             ItemStack item = player.getInventory().getItemInMainHand();
             if ((item == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("リスポーン"))) { return; }
             //リスポーンさせる
-            player.teleport(plugin.getRandomStartLoc(plugin.getOniStartloc()));
+            player.teleport(plugin.getRandomLoc(plugin.getOniStartloc()));
             //効果音
             player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 0.5F, 0.5F);
         }

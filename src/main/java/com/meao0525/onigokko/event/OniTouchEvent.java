@@ -1,10 +1,8 @@
 package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
-import com.meao0525.onigokko.game.Mode;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -50,7 +48,7 @@ public class OniTouchEvent implements Listener {
                     plugin.getOni().add(target.getName());
                     plugin.getOni().remove(damager.getName());
                     plugin.makeOni(target);
-                    target.teleport(plugin.getRandomStartLoc(plugin.getOniStartloc()));
+                    target.teleport(plugin.getRandomLoc(plugin.getOniStartloc()));
                     plugin.makeNige(damager);
                     //イベントの登録しなおし
                     plugin.registerEvent();
@@ -69,7 +67,7 @@ public class OniTouchEvent implements Listener {
                     //鬼増やす
                     plugin.getOni().add(target.getName());
                     plugin.makeOni(target);
-                    target.teleport(plugin.getRandomStartLoc(plugin.getOniStartloc()));
+                    target.teleport(plugin.getRandomLoc(plugin.getOniStartloc()));
                     //イベントの登録しなおし
                     plugin.registerEvent();
                     break;

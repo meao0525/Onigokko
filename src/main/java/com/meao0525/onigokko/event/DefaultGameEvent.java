@@ -9,13 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scoreboard.Team;
-
-import java.util.ArrayList;
 
 public class DefaultGameEvent implements Listener {
 
@@ -38,7 +35,7 @@ public class DefaultGameEvent implements Listener {
                     //両方のチームに所属してないなら逃げチームに入れる
                     plugin.makeNige(player);
                     //ランダムな初期地点に移動
-                    player.teleport(plugin.getRandomStartLoc(plugin.getNigeStartloc()));
+                    player.teleport(plugin.getRandomLoc(plugin.getNigeStartloc()));
                     //足の速さを設定
                     plugin.setGameWalkSpeed(player, plugin.getNigeSpeed());
                 }

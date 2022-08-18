@@ -10,21 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/NigeTouchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.4-Adventure.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko$GameTimer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/Onigokko.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/NigeTouchEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/NigeTouchEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniTouchEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/meao0525/onigokko/event/OniTouchEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.6-Adventure.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.2.6-Adventure.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.4-Adventure.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.6-Adventure.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.2.6-Adventure.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +50,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="last_opened_file_path" value="C:/SpigotServer/plugins" />
+    <property name="project.structure.last.edited" value="アーティファクト" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -108,5 +109,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

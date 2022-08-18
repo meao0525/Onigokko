@@ -1,9 +1,7 @@
 package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -36,7 +34,7 @@ public class OnigoGlowingEvent implements Listener {
             //クールダウン中？
             if (player.hasCooldown(item.getType())) { return; }
             //発光エフェクト30秒
-            PotionEffect glowing = new PotionEffect(PotionEffectType.GLOWING, 200, 1, false);
+            PotionEffect glowing = new PotionEffect(PotionEffectType.GLOWING, 200, 1, false, false);
             //全員光れ！
             for (String n : plugin.getNigeTeam().getEntries()) {
                 Player p = Bukkit.getPlayer(n);
@@ -44,6 +42,9 @@ public class OnigoGlowingEvent implements Listener {
             }
             //クールダウン40秒
             player.setCooldown(Material.ENDER_EYE, 800);
+            //エフェクト
+            player.playEffect(EntityEffect.FIREWORK_EXPLODE);
+            player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_USE, 1.0f, 2.0f);
         }
     }
 

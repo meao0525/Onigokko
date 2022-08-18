@@ -1,7 +1,7 @@
 name: Onigokko
 version: ${project.version}
 main: com.meao0525.onigokko.Onigokko
-api-version: 1.14
+api-version: 1.18
 
 commands:
   onigo:

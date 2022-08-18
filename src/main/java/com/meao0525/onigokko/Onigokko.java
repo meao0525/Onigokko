@@ -11,6 +11,7 @@ import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
@@ -19,8 +20,6 @@ import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 public final class Onigokko extends JavaPlugin {
 
@@ -101,16 +100,18 @@ public final class Onigokko extends JavaPlugin {
         //ゲームスタート
         Gaming = true;
         Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]"
-                + ChatColor.AQUA + mode.toString() + ChatColor.RESET + " を始めます");
+                + ChatColor.AQUA + mode.toString() + ChatColor.RESET + " スタート！");
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (oni.contains(p.getName())) {
                 //鬼になーれ
                 makeOni(p);
                 //ランダムな初期地点に移動
-                p.teleport(getRandomStartLoc(oniStartloc));
+                p.teleport(getRandomLoc(oniStartloc));
                 //足の速さを設定
                 setGameWalkSpeed(p, oniSpeed);
+                //タイトル
+                p.sendTitle("", ChatColor.RED + "- あなたは鬼チームです -", 10, 70, 20);
             } else {
                 //残りのアドベンチャーの人を逃げチームにする
                 if (p.getGameMode() != GameMode.ADVENTURE) {
@@ -118,21 +119,22 @@ public final class Onigokko extends JavaPlugin {
                 }
                 makeNige(p);
                 //ランダムな初期地点に移動
-                p.teleport(getRandomStartLoc(nigeStartloc));
+                p.teleport(getRandomLoc(nigeStartloc));
                 //足の速さを設定
                 setGameWalkSpeed(p, nigeSpeed);
+                //タイトル
+                p.sendTitle("", ChatColor.AQUA + "- あなたは逃げチームです -", 10, 70, 20);
             }
             //タイマー用ボスバー表示
             timerBar.addPlayer(p);
             //合図は大事
-            p.sendTitle("", ChatColor.GOLD + "--- start! ---", 10, 70, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_SHOOT, 3.0F, 3.0F);
             //ゲーム用スコアボードにする
             p.setScoreboard(board);
         }
         //牢屋座標設定
         if ((mode.equals(Mode.KEIDORO))&&(prison == null)) {
-            prison = getRandomStartLoc(oniStartloc);
+            prison = getRandomLoc(oniStartloc);
             Bukkit.broadcastMessage(ChatColor.GOLD + "[どこでも鬼ごっこ]" + ChatColor.RESET + "監獄座標を鬼の初期地点に設定しました");
         }
 
@@ -190,7 +192,7 @@ public final class Onigokko extends JavaPlugin {
             //プレイヤーリストの色戻す
             p.setPlayerListName(ChatColor.RESET + p.getName());
             //エフェクト
-            p.sendTitle("", ChatColor.GOLD + "--- 終了---", 0, 60, 20);
+            p.sendTitle("", ChatColor.GOLD + "--- 終了---", 10, 70, 20);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.3F, 0.5F);
             //元のスコアボードに戻す
             p.setScoreboard(manager.getMainScoreboard());
@@ -232,6 +234,7 @@ public final class Onigokko extends JavaPlugin {
     }
 
     public void registerEvent() {
+        HandlerList.unregisterAll(this);
         getServer().getPluginManager().registerEvents(new DefaultGameEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniTouchEvent(this), this);
         getServer().getPluginManager().registerEvents(new NigeTouchEvent(this), this);
@@ -258,7 +261,7 @@ public final class Onigokko extends JavaPlugin {
         }
     }
 
-    public Location getRandomStartLoc(ArrayList<Location> list) {
+    public Location getRandomLoc(ArrayList<Location> list) {
         //シャッフル
         Collections.shuffle(list);
         //始めの値を返す
