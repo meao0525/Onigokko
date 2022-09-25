@@ -1,7 +1,7 @@
 package com.meao0525.onigokko.event;
 
 import com.meao0525.onigokko.Onigokko;
-import com.meao0525.onigokko.game.OnigoItem;
+import com.meao0525.onigokko.settings.OnigoItem;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

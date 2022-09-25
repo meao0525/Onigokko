@@ -1,8 +1,8 @@
 package com.meao0525.onigokko.command;
 
 import com.meao0525.onigokko.Onigokko;
-import com.meao0525.onigokko.game.Mode;
-import com.meao0525.onigokko.game.OnigoItem;
+import com.meao0525.onigokko.settings.Mode;
+import com.meao0525.onigokko.settings.OnigoItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -18,7 +18,6 @@ import org.bukkit.scoreboard.Score;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class GameCommand implements CommandExecutor {
 
@@ -418,6 +417,8 @@ public class GameCommand implements CommandExecutor {
             item = OnigoItem.ONIGO_PEARL;
         } else if(args[1].equalsIgnoreCase("glowing")) {
             item = OnigoItem.ONIGO_GLOWING;
+        } else if(args[1].equalsIgnoreCase("dash")) {
+            item = OnigoItem.ONIGO_DASH;
         } else {
             return false;
         }

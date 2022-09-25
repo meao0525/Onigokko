@@ -1,4 +1,4 @@
-package com.meao0525.onigokko.game;
+package com.meao0525.onigokko.settings;
 
 public enum  Mode {
     ONIGOKKO("鬼ごっこ"),

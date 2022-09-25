@@ -10,19 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff8682b3-dc6a-4264-8a2a-ed83dedd392a" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Onigokko_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoDashEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/Onigokko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/CommandTabCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/CommandTabCompleter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/command/GameCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/DefaultGameEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniRespawnEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OniTouchEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoGlowingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoPearlThrowEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/event/OnigoPearlThrowEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/game/Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/settings/Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/game/OnigoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meao0525/onigokko/settings/OnigoItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Onigokko-1.2.6-Adventure.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Onigokko-1.2.6-Adventure.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Onigokko-1.2.6-Adventure.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Onigokko-1.2.6-Adventure.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +108,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

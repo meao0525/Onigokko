@@ -29,7 +29,7 @@ public class OniRespawnEvent implements Listener {
             if (!player.getGameMode().equals(GameMode.ADVENTURE)) { return; }
             //リスポーン？
             ItemStack item = player.getInventory().getItemInMainHand();
-            if ((item == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("リスポーン"))) { return; }
+            if ((item.getItemMeta() == null) || (!item.getItemMeta().getDisplayName().equalsIgnoreCase("リスポーン"))) { return; }
             //リスポーンさせる
             player.teleport(plugin.getRandomLoc(plugin.getOniStartloc()));
             //効果音

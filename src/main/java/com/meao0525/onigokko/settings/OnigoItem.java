@@ -1,18 +1,28 @@
-package com.meao0525.onigokko.game;
+package com.meao0525.onigokko.settings;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.HashSet;
+
 public enum OnigoItem {
+    /*-------AdminItem-------*/
+    ADMIN_ONI_ITEMSETTING(Material.RED_CONCRETE, "鬼アイテム設定", true, true, false, false),
+    ADMIN_NIGE_ITEMSETTING(Material.RED_CONCRETE, "逃げアイテム設定", true, true, false, false),
+    /*-------GameItem-------*/
     ONI_HELMET(Material.DIAMOND_HELMET, "鬼ヘルメット", false, false, false, true),
     ONI_CHESTPLATE(Material.DIAMOND_CHESTPLATE, "鬼チェストプレート", false, false, false, true),
     ONI_LEGGINGS(Material.DIAMOND_LEGGINGS, "鬼レギンス", false, false, false, true),
     ONI_BOOTS(Material.DIAMOND_BOOTS, "鬼ブーツ", false, false, false, true),
     ONI_RESPAWN(Material.EMERALD, "リスポーン", false, true, false, true),
     ONIGO_PEARL(Material.ENDER_PEARL, "パール", false, true, true, true),
-    ONIGO_GLOWING(Material.ENDER_EYE, "発光", false, true, false, true);
+    ONIGO_GLOWING(Material.ENDER_EYE, "発光", false, true, false, true),
+    ONIGO_DASH(Material.FEATHER, "迅速", false, true, true, true);
+
+    //TODO: 設定系
+    //TODO: 弓、透明
 
     private Material material;
     private String name;
@@ -46,6 +56,15 @@ public enum OnigoItem {
         item.setItemMeta(meta);
 
         return item;
+    }
+
+    public HashSet<ItemStack> getAdminItems() {
+        HashSet<ItemStack> adminItems = new HashSet<>();
+        //Adminアイテムを返す
+        adminItems.add(ADMIN_ONI_ITEMSETTING.toItemStack());
+        adminItems.add(ADMIN_NIGE_ITEMSETTING.toItemStack());
+
+        return adminItems;
     }
 
     public String getName() {

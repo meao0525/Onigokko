@@ -3,8 +3,8 @@ package com.meao0525.onigokko;
 import com.meao0525.onigokko.command.CommandTabCompleter;
 import com.meao0525.onigokko.command.GameCommand;
 import com.meao0525.onigokko.event.*;
-import com.meao0525.onigokko.game.Mode;
-import com.meao0525.onigokko.game.OnigoItem;
+import com.meao0525.onigokko.settings.Mode;
+import com.meao0525.onigokko.settings.OnigoItem;
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarFlag;
@@ -76,7 +76,7 @@ public final class Onigokko extends JavaPlugin {
         //ボーダー取得
         border = getServer().getWorlds().get(0).getWorldBorder();
         //タイマーバー作成
-        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID, BarFlag.CREATE_FOG);
+        timerBar = Bukkit.createBossBar("残り時間:" + time + "s", BarColor.YELLOW, BarStyle.SOLID);
     }
 
     @Override
@@ -241,6 +241,7 @@ public final class Onigokko extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new OnigoPearlThrowEvent(this), this);
         getServer().getPluginManager().registerEvents(new OniRespawnEvent(this), this);
         getServer().getPluginManager().registerEvents(new OnigoGlowingEvent(this), this);
+        getServer().getPluginManager().registerEvents(new OnigoDashEvent(this), this);
     }
 
     public void registerTeam(Scoreboard board) {
